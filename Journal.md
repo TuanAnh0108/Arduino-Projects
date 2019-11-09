@@ -9,3 +9,7 @@ Journal on 4/11/2019 (Monday)
  ② We started to study about Arduino, downloaded the Arduino app offline and know about the online Arduino app.
  
  ③ We did the reflection about the Car Rental App.
+ 
+ Questions I have: 
+  - How the Arduino works?
+  - Which programming language that Arduino is suitable with?
