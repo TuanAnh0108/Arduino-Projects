@@ -13,3 +13,10 @@ Journal on 4/11/2019 (Monday)
  Questions I have: 
   - How the Arduino works?
   - Which programming language that Arduino is suitable with?
+  
+  Compare Bash and Arduino programing languge
+   
+   | Bash | Arduino |
+   | :--- | :--- |
+   | In bash, the for loop use curly braces for the statement that need to repeat. There are 3 parameters in the curly braces: initialization, condition and increment. You do not need to declare the data type of variable that you will use in your code. Moreover, you have to use do when opening a statemen, done when closing the statement for the for loop. Next, at the end of the statement we do not need to use ";" to end the statement.| In Arduino,like bash we use curly braces for the statement that need to repeat. Also it has the same 3 parameters as in bash. You have to declare all the variable that you use in your program or it will cause errors. Next, the for loop just need to have open and close brackets for the statement. ";" is the compulsory thing in Arduino code, we have to use it to end the statement or it will cause errors. |
+     
