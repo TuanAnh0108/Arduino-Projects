@@ -1,8 +1,12 @@
 # Unit2
 
-1. [Development](#development)
 1. [Design](#design)
+1. [Development](#development)
 
+Design
+--------
+![SystemDiagram](Traffic light.png)
+**Fig. 1** This is the arduino of the traffic light 
 
 Development
 ------------
@@ -52,5 +56,4 @@ Development
       delay(15000);
 }  
 
-Design
---------
+
