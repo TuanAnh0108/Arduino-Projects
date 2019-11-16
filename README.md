@@ -54,6 +54,18 @@ Development
       void loop(){
       changeLights();
       delay(15000);
-}  
+     }  
+     
+2. The blink LED
+①
+②
+③
+④
+3. The counter from 1 to 15 binary number
+①
+②
+③
+④
+
 
 
