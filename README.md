@@ -5,7 +5,7 @@
 
 Design
 --------
-![SystemDiagram](Traffic light.png)
+![SystemDiagram](TrafficLight.png)
 **Fig. 1** This is the arduino of the traffic light 
 
 Development
