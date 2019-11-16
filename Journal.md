@@ -24,3 +24,9 @@ Journal on 6/11/2019
 
 ② We write code for Traffic Light program and made it on Arduino
 
+Journal on 11/11/2019
+①　We learn about the binary number and how to convert from decimal number to binary number
+
+② We write code for counter the binary number from 1 to 15 and made the Arudino for the counter program
+
+
