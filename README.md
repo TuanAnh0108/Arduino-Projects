@@ -8,6 +8,11 @@ Design
 ![SystemDiagram](TrafficLight.png)
 **Fig. 1** This is the arduino of the traffic light 
 
+![SystemDiagram](CounterBinary1to15.png)
+**Fig. 2** This is the arduino of the counter binary
+
+
+
 Development
 ------------
 1. Traffic light
