@@ -8,6 +8,12 @@ Content
 1. [Development](#development)
 1. [Evaluation](#evaluation)
 
+Planning
+-----------
+1. Defining problem 
+
+
+
 
 Design
 --------
@@ -30,7 +36,7 @@ Design
 |1|1|0|6|1|1|1|1|1|0|1|
 |1|1|1|7|1|0|0|0|1|1|0|
 
-
+Based on this table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
 
 Development
 ------------
@@ -47,6 +53,9 @@ Development
       pinMode(yellow, OUTPUT);
       pinMode(green, OUTPUT);
       }
+      
+![](TrafficLight.gif)
+**Gif1** This is the result after making the arduino for the traffic light
 
 ② Declare function changeLight(){}
 
@@ -138,6 +147,9 @@ Development
     
           }
           }  
+          
+ ![](CounterBinary.gif)
+ **Gif2** This is the counter Binary number from 1 to 15 
 
 4. The number segements
 
@@ -188,22 +200,15 @@ Development
           digitalWrite(LEDG, g);
                     
        }
+![](NumberSegment.gif)
+**Gif3** This is the Number Segment with 7 LEDs (it can show us number from 0 to 7)
 
-
-Result
+Evaluation
 ---------
 
-①　The traffic light
 
-![](TrafficLight.gif)
 
-② The counter binary from 1 to 15
 
-![](CounterBinary.gif)
-
-③ The number segment from 0 to 7
-
-![](NumberSegment.gif)
 
 
 
