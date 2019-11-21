@@ -1,8 +1,13 @@
 # Unit2
 
+Content
+---------
+
+1. [Planning](#planning)
 1. [Design](#design)
 1. [Development](#development)
-1. [Result](#result)
+1. [Evaluation](#evaluation)
+
 
 Design
 --------
@@ -14,8 +19,17 @@ Design
 
 **Table of creating number segment**
 
-| But A | But B | But A | But B | But A | But B | But A | But B | But A | But B | But A | But B | But A | But B |
-|:----:|:----:|
+| But A | But B | But C | Decimal | LED A | LED B | LED C | LED D | LED E | LED F | LED G |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|0|0|0|0|1|1|1|1|1|1|0|
+|0|0|1|1|0|1|1|0|0|0|0|
+|0|1|0|2|1|0|1|1|0|1|1|
+|0|1|1|3|1|0|0|1|1|1|1|
+|1|0|0|4|0|1|0|0|1|1|1|
+|1|0|1|5|1|1|0|1|1|0|1|
+|1|1|0|6|1|1|1|1|1|0|1|
+|1|1|1|7|1|0|0|0|1|1|0|
+
 
 
 Development
