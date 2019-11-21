@@ -12,6 +12,10 @@ Design
 ![SystemDiagram](CounterBinary1to15.png)
 **Fig. 2** This is the arduino of the counter binary
 
+**Table of creating number segment**
+
+| But A | But B | But A | But B | But A | But B | But A | But B | But A | But B | But A | But B | But A | But B |
+|:----:|:----:|
 
 
 Development
