@@ -25,7 +25,6 @@ Journal on 6/11/2019
 
 ② We write code for Traffic Light program and made it on Arduino
 
-![](TrafficLight.gif)
 
 Journal on 11/11/2019
 
@@ -33,6 +32,12 @@ Journal on 11/11/2019
 
 ② We write code for counter the binary number from 1 to 15 and made the Arudino for the counter program
 
-![](CounterBinary.gif)
+Journal on 20/11/2019
+
+①　We explore about hwo the number segment works.
+
+②　We write the equation for each light and made a Arduino for it
+
+
 
 
