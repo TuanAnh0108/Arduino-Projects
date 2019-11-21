@@ -129,7 +129,7 @@ Result
 
 ② The counter binary from 1 to 15
 
-![](CounterBinary1to15.gif)
+![](CounterBinary.gif)
 
 ③ The number segment from 0 to 7
 
