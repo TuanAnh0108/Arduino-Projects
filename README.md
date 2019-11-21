@@ -12,7 +12,8 @@ Content
 
 Planning
 -----------
-1. Defining problem 
+### Defining problem 
+We are creating transmittor to solve the communication issue between Earth, Moon and Mars. To be more specific, in each place, there will have a transmittor and receivers. The people from Earth, can only receive and send the binary information. Moreover, the people from Mars, can only receive and send the morse information. However, the people from the Moon can receive and send both two types of information. Therefore, the people from the Moon have to act as a liaison who both 
 
 
 
