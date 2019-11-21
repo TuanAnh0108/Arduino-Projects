@@ -1,3 +1,5 @@
+![CarRental](BinaryLogo.png)
+
 # Unit2
 
 Content
