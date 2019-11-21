@@ -1,4 +1,4 @@
-![CarRental](BinaryLogo.png)
+![CarRental](Logo.png)
 
 # Unit2
 
