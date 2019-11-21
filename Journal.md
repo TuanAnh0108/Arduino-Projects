@@ -38,6 +38,10 @@ Journal on 20/11/2019
 
 ②　We write the equation for each light and made a Arduino for it
 
+③　At first, I did not find difficult when finding the equations and the code for the number segment, but I made a mistake when connecting the atot of the LED, and the resistor connect with the GND. After then, I came back home fixing the problems, and finally it works. 
+
+The questions I have: I have LED lights that sometimes it work, sometimes it not works, I check everything change the LED, but after all it still not works. It is not sustainable. I cannot find the reasons why?
+
 
 
 
