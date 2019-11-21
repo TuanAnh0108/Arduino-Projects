@@ -120,6 +120,12 @@ Development
     
           }
           }  
+Result
+---------
+
+①　The traffic light
+② The counter binary from 1 to 15
+③ The number segment from 0 to 7
 
 
 
