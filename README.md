@@ -14,12 +14,19 @@ Planning
 -----------
 ### Defining problem 
 
-The year is 2050. Planet exploration is a thing, however, communication is still precarious. We are creating transmittor to solve the communication issue between Earth, Moon and Mars. To be more specific, in each place, there will have a transmittor and receivers. The people from Earth, can only receive and send the Morse information. Moreover, the people from Mars, can only receive and send the Binary information. However, the people from the Moon can receive and send both two types of information. Hence, the people from the Moon have to act as a liaison which both receive and transmit information from Earth and Mars. So the people on Moon have to translate information from decimal to binary, from binary to morse and vice versa. 
+The year is 2050. NASA has successfully in exploring Mars, Moon and transport human come to live there. Planet exploration is a thing, however, communication is still precarious. NASA wants to make transmitters in these three planets: Earth, Moon and Mars. It is not easy to communicate with people in different planets. Due to the people from Earth only can receive and send the Morse information. Moreover, the people from MArs can only receive and send the Binary information. And the people from Moon can send and receive both two types of information. The people from the Moon have to act as a liaison which both receive and transmit information from Earth and Mars. So the people on Moon have to translate information from decimal to binary, from binary to morse and vice versa. 
+
+We were selected to solve this problem. W
 
 ### Solution Proposed
 
+The transmitters are feasible to make. We decided to use Arduino to make the keyboard and transmitters and 100W bulb lights for sending the information inputted from the users. The Arduino is really easy to use and build. With the basic level of C programming and building you can easily use Arduino effectively. Hence The Teachnical feasibility is not a big problem for making the transmitter. Also, the price for Arduino tool kits, 100 bulb lights are cheap, not a big issue with the big company like NASA. As mentioned before, Arduino is easy to use so we do not need to spend too much money and time training people to use it. We will make a table to show the binary and morse code for each English character. So the economic factor for this program is fesible.
+
 ### Success Criteria
 
+These are measurable outcomes:
+     1. The keyboard for communication can work with 2 buttons
+     2. The transmitter on Earth 
 
 
 Design
