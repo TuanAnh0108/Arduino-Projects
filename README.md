@@ -42,13 +42,14 @@ Based on this table, the problem can be easily solved with logic gates. We can c
 
 ### Compare Bash and Arduino programing languge
 ① Advantages of bash and arduino
+
    | Bash | Arduino |
    | :--- | :--- |
-   |Easy to learn and use| |
-   |Powerful, doing tasks in computer like: deleting, adding, creating files,... with just typing||
-   |Can see the output immediately after finishing coding in the same app where writing code||
-   |The command and syntax are exactly the same as those directly entered in command line, so programmer do not need to switch to entirely different syntax||
-   |Much quicker when writing code with bash| |
+   |Easy to learn and use| Compatible with many different platform |
+   |Powerful, doing tasks in computer like: deleting, adding, creating files,... with just typing| Various type of data |
+   |Can see the output immediately after finishing coding in the same app where writing code| Well suited with the large and complex task|
+   |The command and syntax are exactly the same as those directly entered in command line, so programmer do not need to switch to entirely different syntax| Fast, effecient language|
+   |Much quicker when writing code with bash| It is very easy to understand, it uses keywords like: if, switch, void,.. |
    |Customizing administrative tasks| |
    |Quick start, and interactive debugging| |
    |No need to declare the type of data| |
@@ -56,14 +57,15 @@ Based on this table, the problem can be easily solved with logic gates. We can c
    |No need to close a comment||
 
 ② Disadvantages of bash and arduino
+
    | Bash | Arduino |
    | :--- | :--- |
-   |Prone to costly errors, a single mistake can change the command which might be harmful|
-   |Slow execution speed|
-   |Not well suited with the large and complex task|
-   |Provide minimal data structure unlike other scripting languages|
-   |Limited data types|
-   |Compatibility problems between different platforms|
+   |Prone to costly errors, a single mistake can change the command which might be harmful| |
+   |Slow execution speed| |
+   |Not well suited with the large and complex task| |
+   |Provide minimal data structure unlike other scripting languages| |
+   |Limited data types| |
+   |Compatibility problems between different platforms| |
 
 ③ Comparison of bash and arduino
    
