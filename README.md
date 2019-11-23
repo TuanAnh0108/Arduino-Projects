@@ -44,22 +44,32 @@ Based on this table, the problem can be easily solved with logic gates. We can c
 ① Advantages of bash and arduino
    | Bash | Arduino |
    | :--- | :--- |
-   |Easy to learn and use|
-   |Powerful, doing tasks in computer like: deleting, adding, creating files,... with just typing|
-   |Can see the output immediately after finishing coding in the same app where writing code|
-   |The command and syntax are exactly the same as those directly entered in command line, so programmer do not need to switch to entirely different syntax|
-   |Much quicker when writing code with bash|
-   |Customizing administrative tasks|
-   |Quick start, and interactive debugging|
+   |Easy to learn and use| |
+   |Powerful, doing tasks in computer like: deleting, adding, creating files,... with just typing||
+   |Can see the output immediately after finishing coding in the same app where writing code||
+   |The command and syntax are exactly the same as those directly entered in command line, so programmer do not need to switch to entirely different syntax||
+   |Much quicker when writing code with bash| |
+   |Customizing administrative tasks| |
+   |Quick start, and interactive debugging| |
+   |No need to declare the type of data| |
+   |No need to use ; to end a statement| |
+   |No need to close a comment||
 
 ② Disadvantages of bash and arduino
    | Bash | Arduino |
    | :--- | :--- |
+   |Prone to costly errors, a single mistake can change the command which might be harmful|
+   |Slow execution speed|
+   |Not well suited with the large and complex task|
+   |Provide minimal data structure unlike other scripting languages|
+   |Limited data types|
+   |Compatibility problems between different platforms|
+
 ③ Comparison of bash and arduino
    
    | Bash | Arduino |
    | :--- | :--- |
-   | In bash, the for loop use curly braces for the statement that need to repeat. There are 3 parameters in the curly braces: initialization, condition and increment. You do not need to declare the data type of variable that you will use in your code. Moreover, you have to use do when opening a statemen, done when closing the statement for the for loop. Next, at the end of the statement we do not need to use ";" to end the statement. When using a variable, you need to use "$" before the name of the variable. Then, to make a comment, you just use "#" to open a comment line. We use "echo" to print String or variable.| In Arduino,like bash we use curly braces for the statement that need to repeat. Also it has the same 3 parameters as in bash. You have to declare all the variable that you use in your program or it will cause errors. Next, the for loop just need to have open and close brackets for the statement. ";" is the compulsory thing in Arduino code, we have to use it to end the statement or it will cause errors. In the contrast of bash, arduino code does not require "$" when using variable. When making a comment, you need to open and close (using /* )the comment. We use "print" to print the string or variables |
+   | In bash, the for loop use curly braces for the statement that need to repeat. There are 3 parameters in the curly braces: initialization, condition and increment. You do not need to declare the data type of variable that you will use in your code. Moreover, you have to use do when opening a statement, done when closing the statement for the for loop. Next, at the end of the statement we do not need to use ";" to end the statement. When using a variable, you need to use "$" before the name of the variable. Then, to make a comment, you just use "#" to open a comment line. We use "echo" to print String or variable.| In Arduino,like bash we use curly braces for the statement that need to repeat. Also it has the same 3 parameters as in bash. You have to declare all the variable that you use in your program or it will cause errors. Next, the for loop just need to have open and close brackets for the statement. ";" is the compulsory thing in Arduino code, we have to use it to end the statement or it will cause errors. In the contrast of bash, arduino code does not require "$" when using variable. When making a comment, you need to open and close (using /* )the comment. We use "print" to print the string or variables |
 
 Development
 ------------
