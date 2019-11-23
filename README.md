@@ -16,6 +16,12 @@ Planning
 
 The year is 2050. Planet exploration is a thing, however, communication is still precarious. We are creating transmittor to solve the communication issue between Earth, Moon and Mars. To be more specific, in each place, there will have a transmittor and receivers. The people from Earth, can only receive and send the Morse information. Moreover, the people from Mars, can only receive and send the Binary information. However, the people from the Moon can receive and send both two types of information. Hence, the people from the Moon have to act as a liaison which both receive and transmit information from Earth and Mars. So the people on Moon have to translate information from decimal to binary, from binary to morse and vice versa. 
 
+### Solution Proposed
+
+### Success Criteria
+
+
+
 Design
 --------
 
