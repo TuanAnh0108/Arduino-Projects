@@ -51,7 +51,15 @@ Design
 |1|1|0|6|1|1|1|1|1|0|1|
 |1|1|1|7|1|0|0|0|1|1|0|
 
-Based on this table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
+Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
+
+### Usability 
+
+Usability is according to Techpedia[1] the degree of wase with which a product can be used to achieve their goals. It studies the elegance, clarity, intuitive with which the computer program. 
+
+### Humna-centered design HCD
+
+
 
 ### Compare Bash and Arduino programing languge
 ① Advantages of bash and arduino
@@ -259,5 +267,8 @@ Evaluation
 
 
 
-
+Reference
+----------
+[1] "Usability" retrived from https://en.wikipedia.org/wiki/Usability (25 Nov 2019)
+[2] Posner J Mars R. "It's not you, bad doors are everywhere" 2016. Retrived (25 Nov 2019)
 
