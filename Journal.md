@@ -42,6 +42,7 @@ We start to design the input system with two buttons.
 
 The questions I have: 
  + How to read the press button when we press it twice or hold it?
+ + How we can delete the letter after choosing?
 
 
 
