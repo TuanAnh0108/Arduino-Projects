@@ -26,7 +26,7 @@ The transmitters are feasible to make. We decided to use Arduino to make the key
 
 These are measurable outcomes:
      1. The keyboard for communication can work with 2 buttons
-     2. The transmitter on Earth 
+     2. The transmitter can transmit the information correctly
      3. 
 
 Design
@@ -249,6 +249,7 @@ Development
                     
        }
 ![](NumberSegment.gif)
+
 **Gif3** This is the Number Segment with 7 LEDs (it can show us number from 0 to 7)
 
 Evaluation
