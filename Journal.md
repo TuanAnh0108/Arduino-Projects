@@ -36,6 +36,15 @@ Journal on 20/11/2019
 
 The questions I have: I have LED lights that sometimes it work, sometimes it not works, I check everything change the LED, but after all it still not works. It is not sustainable. I cannot find the reasons why?
 
+Journal  on 25/11/2019
+ 
+We start to design the input system with two buttons.
+
+The questions I have: 
+ + How to read the press button when we press it twice or hold it?
+
+
+
 
 
 
