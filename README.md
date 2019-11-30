@@ -53,6 +53,9 @@ Design
 
 Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
 
+![SystemDiagram](EnglishInputSystem.png)
+**Fig. 3** The design of English Input system with 2 buttons
+
 ### Usability 
 
 Usability is according to Techpedia[1] the degree of wase with which a product can be used to achieve their goals. It studies the elegance, clarity, intuitive with which the computer program. 
