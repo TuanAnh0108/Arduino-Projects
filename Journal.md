@@ -38,11 +38,20 @@ The questions I have: I have LED lights that sometimes it work, sometimes it not
 
 Journal  on 25/11/2019
  
-We start to design the input system with two buttons.
+I start to design the input system with two buttons.
 
 The questions I have: 
  + How to read the press button when we press it twice or hold it?
  + How we can delete the letter after choosing?
+ + How to interupt the Arudino
+ 
+ Journal on 27/11/2019
+ 
+ ①　I learned about the Human-centered design HCD and usability
+ ②　I continue to complete the English input system 
+ 
+ Questions I have: 
+   + When run the debouncebutton function and the related code, why the LCD does not work? 
 
 
 
