@@ -103,7 +103,7 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
 
 Development
 ------------
-1. Traffic light
+### 1. Traffic light
 
 ①　Declare the port number of each LED light and set the LED light as OUPUT
           
@@ -118,6 +118,7 @@ Development
       }
       
 ![](TrafficLight.gif)
+
 **Gif1** This is the result after making the arduino for the traffic light
 
 ② Declare function changeLight(){}
@@ -152,7 +153,7 @@ Development
       delay(15000);
      }  
      
-2. The blink LED
+### 2. The blink LED
 
           int redLED = 13;
           
@@ -172,7 +173,7 @@ Development
           delay(t);
           }
 
-3. The counter from 1 to 15 binary number
+### 3. The counter from 1 to 15 binary number
 
           void setup()
           {
@@ -212,9 +213,10 @@ Development
           }  
           
  ![](CounterBinary.gif)
+ 
  **Gif2** This is the counter Binary number from 1 to 15 
 
-4. The number segements
+### 4. The number segements
 
           int LEDA = 1;
           int LEDB = 2;
