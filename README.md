@@ -1,5 +1,4 @@
-![SystemDiagram](logo++.png)       
-# TRANSMITTER LANGUAGE
+ # TRANSMITTER LANGUAGE
                                    
 
 Content
