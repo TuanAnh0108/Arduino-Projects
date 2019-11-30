@@ -26,9 +26,11 @@ The transmitters are feasible to make. We decided to use Arduino to make the key
 ### Success Criteria
 
 These are measurable outcomes:
-     1. The keyboard for communication can work with 2 buttons
-     2. The transmitter can transmit the information correctly
-     3. 
+
+   1. The keyboard for communication can work with 2 buttons
+   2. The transmitter can transmit the information correctly
+   3. User can choose and delete the letters
+   4. 
 
 Design
 --------
