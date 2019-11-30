@@ -56,13 +56,16 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 ![SystemDiagram](EnglishInputSystem.png)
 **Fig. 3** The design of English Input system with 2 buttons
 
+![SystemDiagram](ArduinoInput.png)
+**Fig. 4** The arduino design of Enlish system with 2 buttons
+
 ### Usability 
 
-Usability is according to Techpedia[1] the degree of wase with which a product can be used to achieve their goals. It studies the elegance, clarity, intuitive with which the computer program. 
+Usability is according to Wikipedia[1] the degree of wase with which a product can be used to achieve their goals. It studies the elegance, clarity, intuitive with which the computer program. 
 
-### Humna-centered design HCD
+### Human-centered design HCD
 
-
+Human-centerd design HCD according to Wikipedia[2] is an approach to problem solving, commonly used in design and management frameworks that develops solutions to problems by involving the human perspective in all steps of the problem-solving process. Human involvement typically takes place in observing the problem within context, brainstorming, conceptualizing, developing, and implementing the solution.
 
 ### Compare Bash and Arduino programing languge
 ① Advantages of bash and arduino
@@ -273,5 +276,5 @@ Evaluation
 Reference
 ----------
 [1] "Usability" retrived from https://en.wikipedia.org/wiki/Usability (25 Nov 2019)
-[2] Posner J Mars R. "It's not you, bad doors are everywhere" 2016. Retrived (25 Nov 2019)
+[2] "Human-centered design" retrived from https://en.wikipedia.org/wiki/Human-centered_design (25 Nov 2019)
 
