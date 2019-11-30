@@ -1,4 +1,4 @@
-![SystemDiagram](logo.png)
+
 
 # Unit2
 
