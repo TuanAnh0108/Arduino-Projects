@@ -57,10 +57,8 @@ Design
 |1|1|1|7|1|0|0|0|1|1|0|
 
 Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
-
 ![SystemDiagram](EnglishInputSystem.png)
 **Fig. 3** The design of English Input system with 2 buttons
-
 ![SystemDiagram](ArduinoInput.png)
 **Fig. 4** The arduino design of Enlish system with 2 buttons
 
