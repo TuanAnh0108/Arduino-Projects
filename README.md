@@ -23,20 +23,24 @@ We were chosen to make the transmitter.
 
 ### Solution Proposed
 
-The transmitters are feasible to make. We decided to use Arduino to make the keyboard and transmitters and 100W bulb lights for sending the information inputted from the users. The Arduino is really easy to use and build. With the basic level of C programming and building you can easily use Arduino effectively. Hence The Teachnical feasibility is not a big problem for making the transmitter. Also, the price for Arduino tool kits, 100 bulb lights are cheap, not a big issue with the big company like NASA. So the economic factor for this program is fesible. As mentioned before, Arduino is easy to use so we do not need to spend too much money and time training people to use it. We will make a table to show the binary and morse code for each English character. The operational fesibility is also done . All the information is inputted by the users and no one has ever legally made this program so this program is legal. The keyboard with just only 2 buttons and the Arduino is easy to use so master using the transmitter takes not much time. The users only need half a week to practice using it. And, it takes under 1 week to build the transmitter and training the users to do it. Therefore, this program is fesible and realistic.
+The transmitters are feasible to make. We decided to use Arduino to make the keyboard and transmitters and 100W bulb lights for sending the information inputted from the users. The Arduino is really easy to use and build. With the basic level of C programming and building you can easily use Arduino effectively. Hence The Teachnical feasibility is not a big problem for making the transmitter. Also, the price for Arduino tool kits, 100W bulb lights are cheap, not a big issue with the big company like NASA. So the economic factor for this program is fesible. As mentioned before, Arduino is easy to use so we do not need to spend too much money and time training people to use it. We will make a table to show the binary and morse code for each English character. The operational fesibility is also done . All the information is inputted by the users and no one has ever legally made this program so this program is legal. The keyboard with just only 2 buttons and the Arduino is easy to use so master using the transmitter takes not much time. The users only need half a week to practice using it. And, it takes under 1 week to build the transmitter and training the users to do it. Therefore, this program is fesible and realistic.
 
 ### Success Criteria
 
 These are measurable outcomes:
 
-   1. The keyboard for communication can work with 2 buttons
+   1. The keyboard with 2 buttons allows users to input choosing the options and letters
    2. The transmitter can transmit the information correctly from english to binary, from binary to morse and vice versa. 
    3. User can choose and delete the letters
-   4. The bulb light is used effeciently in the communication   
-
+   4. The bulb light is used effeciently in the communication, there is no issue for the bulblight like broken or too old.  
+   5. The bulb light need to represent correctly when turn on or off as for the information
+   6. An LCD screen shows the available letter options and the letter users choose.
+   7. There will be options for users to choose between transmit to binary or morse
+   8. 
+   
 Design
 --------
-![SystemDiagram](Sketch.png)
+![SystemDiagram](Sketch1.png)
 
 **Fig. 1** The sketch of the system show the main Input and Output components, actions and software requirement.
 
@@ -112,6 +116,24 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    | Bash | Arduino |
    | :--- | :--- |
    | In bash, the for loop use curly braces for the statement that need to repeat. There are 3 parameters in the curly braces: initialization, condition and increment. You do not need to declare the data type of variable that you will use in your code. Moreover, you have to use do when opening a statement, done when closing the statement for the for loop. Next, at the end of the statement we do not need to use ";" to end the statement. When using a variable, you need to use "$" before the name of the variable. Then, to make a comment, you just use "#" to open a comment line. We use "echo" to print String or variable. Then, bash is a powerful programming language, it can do the administrator task| In Arduino,like bash we use curly braces for the statement that need to repeat. Also it has the same 3 parameters as in bash. You have to declare all the variable that you use in your program or it will cause errors. Next, the for loop just need to have open and close brackets for the statement. ";" is the compulsory thing in Arduino code, we have to use it to end the statement or it will cause errors. In the contrast of bash, arduino code does not require "$" when using variable. When making a comment, you need to open and close (using /* )the comment. We use "print" to print the string or variables. Arduino programming language cannot execute the administrator task like adding, deleting,.. files, folders.  |
+   
+   ### Interruption on Arduino
+   When Arudino running, it will check every line of code in a very small amount of time: 10ms. So if the users want to input by using press button or other devices, the users need to be very fast or just repeat pressing the button until the Arduino check the line that contain the code for input. That is time consuming and inconvinient, it also makes the code run wrongly. We use interuption to solve this problem. Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems.
+   Syntax:  attachInterrupt(pin, ISR, mode)
+      pin: the Arduino pin number.
+      ISR: the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function       is sometimes referred to as an interrupt service routine.
+      mode: defines when the interrupt should be triggered. Four constants are predefined as valid values:
+
+         - LOW to trigger the interrupt whenever the pin is low,
+
+         - CHANGE to trigger the interrupt whenever the pin changes value
+
+         - RISING to trigger when the pin goes from low to high,
+
+         - FALLING for when the pin goes from high to low.
+   ### Debouncing button
+   Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
+   
 
 Development
 ------------
@@ -377,4 +399,6 @@ Reference
 [1] "Usability" retrived from https://en.wikipedia.org/wiki/Usability (25 Nov 2019)
 
 [2] "Human-centered design" retrived from https://en.wikipedia.org/wiki/Human-centered_design (25 Nov 2019)
+
+[3] "Debounce button" retrived from https://www.arduino.cc/en/tutorial/debounce (1 Dec 2019)
 
