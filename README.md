@@ -558,6 +558,9 @@ void loop() {
 }
 ```
 
+![](LCDscroll.gif)
+
+**Gif4** This is the LCD scroll
 
 
 Evaluation
