@@ -280,19 +280,77 @@ Development
 ①  Add all the letters and digits to the keyboard
 ```.ino
 int index = 0;
-String keyboard[]={"A", "B", "C", "D", "SENT", "DEL"};
+String keyboard[]={"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", " ","SENT", "DEL"};
 String text = "";
-int numOptions = 6;
+int numOptions = 40;
 ```
 ②  Initialize the library with the numbers of the interface pins
 ```.ino
 LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
 ```
-③ 
-④
-⑤
-⑥
-⑦
+③ Function changes the letter in the keyboard
+  ```.ino
+  void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    }                                   
+ }
+}
+```
+④ Function add the letter to the text or send the message
+ ```.ino
+ void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+    else if(key == "SENT")
+    {
+      text="";
+    }else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+ ```
+⑤  Set up the LCD's number of columns and rows. And print message to the LCD
+```.ino
+void setup() {
+  lcd.begin(16, 2);
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+}
+```
+⑥ Run the program in the loop
+```.ino
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+```
 
 Evaluation
 ---------
