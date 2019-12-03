@@ -36,7 +36,7 @@ These are measurable outcomes:
 
 Design
 --------
-![SystemDiagram](Sketch.png)
+![SystemDiagram]()
 
 **Fig. 1** The sketch of the system show the main Input and Output components, actions and software requirement.
 
