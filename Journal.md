@@ -53,6 +53,11 @@ The questions I have:
  Questions I have: 
    + When run the debouncebutton function and the related code, why the LCD does not work? 
 
+Journal on 02/12/2019
+
+① I learned about the computer architecture
+② 
+③
 
 
 
