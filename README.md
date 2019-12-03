@@ -36,16 +36,19 @@ These are measurable outcomes:
 
 Design
 --------
+![SystemDiagram](Sketch.png)
+
+**Fig. 1** The sketch of the system show the main Input and Output components, actions and software requirement.
 
 ![SystemDiagram](TrafficLight.png)
-**Fig. 1** This is the arduino of the traffic light 
+**Fig. 2** This is the arduino of the traffic light 
 
 ![SystemDiagram](CounterBinary1to15.png)
-**Fig. 2** This is the arduino of the counter binary
+**Fig. 3** This is the arduino of the counter binary
 
 ![SystemDiagram](BInarytoDecimal.png)
 
-**Fig. 3** The flow chart for converting decimal number to binary number
+**Fig. 4** The flow chart for converting decimal number to binary number
 
 **Table of creating number segment**
 
@@ -62,11 +65,11 @@ Design
 
 Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
 ![SystemDiagram](EnglishInputSystem.png)
-**Fig. 4** The design of English Input system with 2 buttons
+**Fig. 5** The design of English Input system with 2 buttons
 ![SystemDiagram](Sendandaddtext.jpg)
-**Fig. 5** The flow chart for send and add english text
+**Fig. 6** The flow chart for send and add english text
 ![SystemDiagram](ArduinoInput.png)
-**Fig. 6** The arduino design of Enlish system with 2 buttons
+**Fig. 7** The arduino design of Enlish system with 2 buttons
 
 
 ### Usability 
