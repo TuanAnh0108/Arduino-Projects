@@ -230,6 +230,7 @@ Development
  **Gif2** This is the counter Binary number from 1 to 15 
 
 ### 4. The number segements
+①　 Declare all the Led and button pin
 ```.ino
           int LEDA = 1;
           int LEDB = 2;
@@ -241,8 +242,10 @@ Development
           int butA = 10;
           int butB = 11;
           int butC = 12;
-
-       void setup()
+```
+②　Declare the input and output
+```.ino
+　　　　　void setup()
        {
           pinMode(LEDA, OUTPUT);
           pinMode(LEDB, OUTPUT);
@@ -256,7 +259,9 @@ Development
           pinMode(butC, INPUT);
   
         }
-
+```
+③　Logic gate equation for each LED
+```.ino
        void loop()
          {
           bool A = digitalRead(butA);
