@@ -36,7 +36,6 @@ These are measurable outcomes:
    5. The bulb light need to represent correctly when turn on or off as for the information
    6. An LCD screen shows the available letter options and the letter users choose.
    7. There will be options for users to choose between transmit to binary or morse
-   8. 
    
 Design
 --------
