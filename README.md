@@ -30,11 +30,9 @@ The transmitters are feasible to make. We decided to use Arduino to make the key
 These are measurable outcomes:
 
    1. The keyboard for communication can work with 2 buttons
-   2. The transmitter can transmit the information correctly
+   2. The transmitter can transmit the information correctly from english to binary, from binary to morse and vice versa. 
    3. User can choose and delete the letters
-   4. The program can transmit from english to binary, from binary to morse and vice versa. 
-   5. 
-   
+   4. The bulb light is used effeciently in the communication   
 
 Design
 --------
