@@ -53,6 +53,10 @@ Design
 
 **Fig. 4** The flow chart for converting decimal number to binary number
 
+![SystemDiagram](Logicgate.png)
+
+**Fig. 4** Type of logic gate
+
 **Table of creating number segment**
 
 | But A | But B | But C | Decimal | LED A | LED B | LED C | LED D | LED E | LED F | LED G |
@@ -66,7 +70,8 @@ Design
 |1|1|0|6|1|1|1|1|1|0|1|
 |1|1|1|7|1|0|0|0|1|1|0|
 
-Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want. 
+Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want.
+
 ![SystemDiagram](EnglishInputSystem.png)
 **Fig. 5** The design of English Input system with 2 buttons
 ![SystemDiagram](Sendandaddtext.jpg)
@@ -115,6 +120,9 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    | Bash | Arduino |
    | :--- | :--- |
    | In bash, the for loop use curly braces for the statement that need to repeat. There are 3 parameters in the curly braces: initialization, condition and increment. You do not need to declare the data type of variable that you will use in your code. Moreover, you have to use do when opening a statement, done when closing the statement for the for loop. Next, at the end of the statement we do not need to use ";" to end the statement. When using a variable, you need to use "$" before the name of the variable. Then, to make a comment, you just use "#" to open a comment line. We use "echo" to print String or variable. Then, bash is a powerful programming language, it can do the administrator task| In Arduino,like bash we use curly braces for the statement that need to repeat. Also it has the same 3 parameters as in bash. You have to declare all the variable that you use in your program or it will cause errors. Next, the for loop just need to have open and close brackets for the statement. ";" is the compulsory thing in Arduino code, we have to use it to end the statement or it will cause errors. In the contrast of bash, arduino code does not require "$" when using variable. When making a comment, you need to open and close (using /* )the comment. We use "print" to print the string or variables. Arduino programming language cannot execute the administrator task like adding, deleting,.. files, folders.  |
+   ### Logic gate
+   
+   A logic gate is a building block of a digital circuit. Most logic gates have two inputs and one output and are based on Boolean algebra. At any given moment, every terminal is in one of the two binary conditions false (high) or true (low). False represents 0, and true represents 1. Depending on the type of logic gate being used and the combination of inputs, the binary output will differ. A logic gate can be thought of like a light switch, wherein one position the output is off—0, and in another, it is on—1.  Logic gates are commonly used in integrated circuits (IC).[4]
    
    ### Interruption on Arduino
    When Arudino running, it will check every line of code in a very small amount of time: 10ms. So if the users want to input by using press button or other devices, the users need to be very fast or just repeat pressing the button until the Arduino check the line that contain the code for input. That is time consuming and inconvinient, it also makes the code run wrongly. We use interuption to solve this problem. Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems.
@@ -136,6 +144,7 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
          - FALLING for when the pin goes from high to low.
    ### Debouncing button
    Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
+   
 
 Development
 ------------
@@ -575,5 +584,9 @@ Reference
 
 [2] "Human-centered design" retrived from https://en.wikipedia.org/wiki/Human-centered_design (25 Nov 2019)
 
-[3] "Debounce button" retrived from https://www.arduino.cc/en/tutorial/debounce (1 Dec 2019)
+[3] "Logic gate" retrived from https://whatis.techtarget.com/definition/logic-gate-AND-OR-XOR-NOT-NAND-NOR-and-XNOR
+
+[4] "Debounce button" retrived from https://www.arduino.cc/en/tutorial/debounce (1 Dec 2019)
+
+
 
