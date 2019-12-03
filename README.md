@@ -119,10 +119,14 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    
    ### Interruption on Arduino
    When Arudino running, it will check every line of code in a very small amount of time: 10ms. So if the users want to input by using press button or other devices, the users need to be very fast or just repeat pressing the button until the Arduino check the line that contain the code for input. That is time consuming and inconvinient, it also makes the code run wrongly. We use interuption to solve this problem. Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems.
+   
    Syntax:  attachInterrupt(pin, ISR, mode)
-      pin: the Arduino pin number.
-      ISR: the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function       is sometimes referred to as an interrupt service routine.
-      mode: defines when the interrupt should be triggered. Four constants are predefined as valid values:
+      
+   pin: the Arduino pin number.
+      
+   ISR: the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function       is sometimes referred to as an interrupt service routine.
+      
+   mode: defines when the interrupt should be triggered. Four constants are predefined as valid values:
 
          - LOW to trigger the interrupt whenever the pin is low,
 
@@ -133,7 +137,6 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
          - FALLING for when the pin goes from high to low.
    ### Debouncing button
    Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
-   
 
 Development
 ------------
@@ -310,7 +313,95 @@ Development
 
 **Gif3** This is the Number Segment with 7 LEDs (it can show us number from 0 to 7)
 
-### 5. English Input System
+### 5. Debouncing button
+
+①　Declare the button and the led pin number and state
+```.ino
+const int buttonPin = 2;    // the number of the pushbutton pin
+const int ledPin = 13;      // the number of the LED pin
+
+// Variables will change:
+int ledState = HIGH;         // the current state of the output pin
+int buttonState;             // the current reading from the input pin
+int lastButtonState = LOW;   // the previous reading from the input pin
+
+// the following variables are unsigned longs because the time, measured in
+// milliseconds, will quickly become a bigger number than can be stored in an int.
+unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
+unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
+```
+② Set initial LED state
+```.ino
+void setup() {
+  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  
+  digitalWrite(ledPin, ledState);
+}
+```
+③　double check the state of the buttons
+```.ino
+void loop() {
+  // read the state of the switch into a local variable:
+  int reading = digitalRead(buttonPin);
+
+  // check to see if you just pressed the button
+  // (i.e. the input went from LOW to HIGH), and you've waited long enough
+  // since the last press to ignore any noise:
+
+  // If the switch changed, due to noise or pressing:
+  if (reading != lastButtonState) {
+    // reset the debouncing timer
+    lastDebounceTime = millis();
+  }
+
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    // whatever the reading is at, it's been there for longer than the debounce
+    // delay, so take it as the actual current state:
+
+    // if the button state has changed:
+    if (reading != buttonState) {
+      buttonState = reading;
+
+      // only toggle the LED if the new button state is HIGH
+      if (buttonState == HIGH) {
+        ledState = !ledState;
+      }
+    }
+  }
+
+  // set the LED:
+  digitalWrite(ledPin, ledState);
+
+  // save the reading. Next time through the loop, it'll be the lastButtonState:
+  lastButtonState = reading;
+}
+```
+### 6. Debounce button
+```.ino
+// Declare
+const byte ledPin = 13;
+const byte interruptPin = 2;
+volatile byte state = LOW;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(interruptPin, INPUT_PULLUP);
+  // the program will interrupt the Arduino and run the blink function
+  attachInterrupt(digitalPinToInterrupt(interruptPin), blink, CHANGE); 
+}
+
+void loop() {
+  digitalWrite(ledPin, state);
+}
+
+void blink() {
+  state = !state;
+}
+
+```
+
+### 7. English Input System
 
 ①  Add all the letters and digits to the keyboard
 ```.ino
@@ -386,6 +477,88 @@ void loop() {
   delay(100);
 }
 ```
+### 8. Small development on moving the LCD screen to left and right
+ ①　Declare the libraries, number of LCD interface pins, the button pin numbers.
+ ```.ino
+ // include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 7, 6);
+
+int but1 = 2;
+int but2 = 3;
+int press1 = 0;
+int press2 = 0;
+int x =0;
+String text = "";
+
+char letter[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','y','z','w','1','2','3','4','5','6','7','8','9','0', ' '};
+```
+②　Set up the LCD and print the letter to LCD
+```.ino
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  
+  pinMode(but1, INPUT);
+  pinMode(but2, INPUT);
+  
+  for(int i=0; i < 38; i++){
+    lcd.print(letter[i]);
+    delay(100);
+  }   
+
+}
+```
+③　Declare function for each button
+  ```.ino
+ void hpress1(){
+    
+   long last_interrupt_time = 0;
+   long interrupt_time = millis();
+   long timepress2 = millis();
+   if(interrupt_time - last_interrupt_time > 200) {
+     if(digitalRead(but1) == HIGH){
+      press1++;
+     } if (press1 == 1){
+        x--;
+        press1 = 0;
+        lcd.scrollDisplayLeft();
+      
+   }
+     timepress2 = last_interrupt_time;
+ }
+ }
+  void hpress2(){
+    
+   long last_interrupt_time1 = 0;
+   long interrupt_time1 = millis();
+   long timepress1 = millis();
+   if(interrupt_time1 - last_interrupt_time1 > 200) {
+      if(digitalRead(but2) == HIGH){
+      press2++;
+     } if (press2 == 1){
+        x++;
+        press2 = 0;
+      lcd.scrollDisplayRight();  
+     
+     
+   last_interrupt_time1=interrupt_time1;
+   timepress1 = last_interrupt_time1;  
+   }
+  }
+  }
+```
+④。Run the interruption
+```.ino
+void loop() {
+  attachInterrupt(0, hpress1, CHANGE);
+  attachInterrupt(1, hpress2, CHANGE);
+}
+```
+
+
 
 Evaluation
 ---------
