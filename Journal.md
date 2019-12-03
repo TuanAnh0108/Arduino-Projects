@@ -56,8 +56,7 @@ The questions I have:
 Journal on 02/12/2019
 
 ① I learned about the computer architecture
-② 
-③
+② We continue to finish the arduino english input system.
 
 
 
