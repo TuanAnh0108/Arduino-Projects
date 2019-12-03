@@ -32,7 +32,9 @@ These are measurable outcomes:
    1. The keyboard for communication can work with 2 buttons
    2. The transmitter can transmit the information correctly
    3. User can choose and delete the letters
-   4. 
+   4. The program can transmit from english to binary, from binary to morse and vice versa. 
+   5. 
+   
 
 Design
 --------
@@ -108,7 +110,7 @@ Development
 ### 1. Traffic light
 
 ①　Declare the port number of each LED light and set the LED light as OUPUT
-          
+   ```.ino       
       int red = 10;
       int yellow = 9;
       int green = 8;
@@ -118,7 +120,7 @@ Development
       pinMode(yellow, OUTPUT);
       pinMode(green, OUTPUT);
       }
-      
+  ``` 
 ![](TrafficLight.gif)
 
 **Gif1** This is the result after making the arduino for the traffic light
@@ -128,7 +130,7 @@ Development
       void changeLights(){}
       
 ③　Write code for the traffic light inside the changeLight function
-
+```.ino
     # Turn the green ligh off, the yellow light turns on 
        digitalWrite(green, LOW);
        digitalWrite(yellow, HIGH);
@@ -148,15 +150,16 @@ Development
       digitalWrite(red, LOW);
       digitalWrite(green, HIGH);
       delay(3000);
+ ```
  ④　Execute the function changeLight inside the void loop() {}
-    
+ ```.ino
       void loop(){
       changeLights();
       delay(15000);
      }  
-     
+ ```  
 ### 2. The blink LED
-
+```.ino
           int redLED = 13;
           
           void setup() {
@@ -174,9 +177,9 @@ Development
           digitalWrite(redLED, LOW);
           delay(t);
           }
-
+ ```
 ### 3. The counter from 1 to 15 binary number
-
+ ```.ino
           void setup()
           {
            pinMode(A, OUTPUT);
@@ -213,13 +216,13 @@ Development
     
           }
           }  
-          
+ ```
  ![](CounterBinary.gif)
  
  **Gif2** This is the counter Binary number from 1 to 15 
 
 ### 4. The number segements
-
+```.ino
           int LEDA = 1;
           int LEDB = 2;
           int LEDC = 3;
@@ -267,9 +270,29 @@ Development
           digitalWrite(LEDG, g);
                     
        }
+   ```
 ![](NumberSegment.gif)
 
 **Gif3** This is the Number Segment with 7 LEDs (it can show us number from 0 to 7)
+
+### 5. English Input System
+
+①  Add all the letters and digits to the keyboard
+```.ino
+int index = 0;
+String keyboard[]={"A", "B", "C", "D", "SENT", "DEL"};
+String text = "";
+int numOptions = 6;
+```
+②  Initialize the library with the numbers of the interface pins
+```.ino
+LiquidCrystal lcd(12, 11, 5, 4, 9, 8);
+```
+③ 
+④
+⑤
+⑥
+⑦
 
 Evaluation
 ---------
