@@ -581,6 +581,29 @@ void loop() {
 
 **Gif4** This is the LCD scroll
 
+### 9. Convert English to binary ASCII
+```.ino
+
+void setup()
+{
+Serial.begin(9600);
+  
+String myText = "Tuan";        // Declare the text we want to convert
+
+for(int i=0; i<myText.length(); i++){  // this loop will run through every character of the text
+
+   char myChar = myText.charAt(i);    // This will take out individual letter of the text
+ 
+    for(int i=7; i>=0; i--){           
+      byte bytes = bitRead(myChar,i);   // Reads a bit of a number
+      Serial.print(bytes, BIN);
+    }
+
+    Serial.println("");
+}
+}
+
+```
 
 Evaluation
 ---------
