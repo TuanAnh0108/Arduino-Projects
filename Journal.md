@@ -58,6 +58,11 @@ Journal on 02/12/2019
 ① I learned about the computer architecture
 ② We continue to finish the arduino english input system.
 
+Journal on 11/12/2019
+
+① We continue working on the transmitter
+② I found out the way to convert English to binary (ASCII)
+
 
 
 
