@@ -156,6 +156,20 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    ### Debouncing button
    Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
    
+   ### Protocol
+    | NAME | CREATOR | SUMMARY |
+    |:--:|:--:|:--:|
+    |IP|Vint Cerf & Bob Kahn| Interface identification addresss in the network|
+    |FTP|Abhay Bhusan| Transfer file between client and server|
+    |SSH|Tatu Ylonen|Log into a remote machine and execute commands|
+    |SMTP|RFC821|Send/receive emails|
+    |Telnet|UCLA| Uesd on the internet or local area network|
+    |POP3|Mark Crispin| Send/receive emails and download emails|
+    |HTTP|Tim Berners-Lee| Used on worldwide web for anything clickable (hyperlinks,etc)|
+    |VPN|Gurdeep Singh-Pall| Provides encrypted internet connections|
+    
+   Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth, the Moon, and Mars. 
+        
 
 Development
 ------------
