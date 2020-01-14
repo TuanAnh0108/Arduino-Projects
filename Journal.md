@@ -64,13 +64,15 @@ Journal on 11/12/2019
 ② I found out the way to convert English to binary (ASCII)
 
 Journal on 6/1/2020
+
 ①　We learned about C an how it is similar to Arduino programming language
 
 Journal on 8/1/2020
+
   We practice C exercises
   
 Journal on 13/1/2020
-
+ 
 
 
 
