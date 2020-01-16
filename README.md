@@ -764,7 +764,148 @@ for(int i=0; i<myText.length(); i++){  // this loop will run through every chara
     Serial.println("");
 }
 }
+```
 
+### 11. Complete convert E to Binary system and signal.
+```.ino
+ // include the library code:
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={" ", "SENT", "a", "b", "c", "d", "e", "f", "g", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "DEL"};
+String text = "";
+int numOptions = 39;
+int led1 = 8;
+int led2 = 9;
+byte bna;
+String chch = "";
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
+
+void setup() {
+// Declare the OUTPUT 
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+ 
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assume
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+    else if(key == "SENT")
+    {
+      EtoB();
+      turnOnOff();
+      sent();
+      turnOnOff();
+      text="";
+    }else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+void EtoB(){     //This function convert English to binary 
+
+for(int i=0; i<text.length(); i++){
+
+   char myChar = text.charAt(i);
+ 
+    for(int i=7; i>=0; i--){
+      bna = bitRead(myChar,i);
+      Serial.print(bna);
+      chch += bna; 
+    }
+    Serial.print(" ");
+}
+}
+
+  
+void sent(){                // This function will turn the binary numbers to the light signal 
+    for(int x=0; x < chch.length(); x++){
+      char myChar1 = chch.charAt(x);
+      if(myChar1 == '0'){    // If the letter is 0, turn led1 off
+        digitalWrite(led1, LOW);
+        blink();             // Light 2 blinks
+        delay(1000);
+      } else if(myChar1 == '1'){   // If the letter is 1, turn led1 on 
+        digitalWrite(led1, HIGH);
+        blink();
+        delay(1000);
+      } else {   //If it is the space, turn off both lights
+        turnOff();
+      }
+    }
+  }
+
+void blink(){       // THis function will blink the ligh
+  digitalWrite(led2, HIGH);
+  delay(1000);
+  digitalWrite(led2, LOW);
+  delay(1000);
+}
+
+void turnOnOff(){            // This function will turn the light on and turn it off
+ digitalWrite(led1, HIGH);
+ digitalWrite(led2, HIGH);
+ delay(1000);
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(1000);
+}
+
+void turnOff(){     // This function will turn both 2 lights
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(1000);
+}
+ 
 ```
 
 Evaluation
