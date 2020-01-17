@@ -907,6 +907,9 @@ void turnOff(){     // This function will turn both 2 lights
 }
  
 ```
+![](EtoBComplete.gif)
+
+**Gif5** This is the convert system from English to binary
 
 Evaluation
 ---------
