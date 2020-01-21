@@ -177,8 +177,17 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    |VPN|Gurdeep Singh-Pall| Provides encrypted internet connections|
     
    Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth, the Moon, and Mars. 
+    
+   ### Machine cycle
+   
+   A machine cycle consists of the steps that a computer’s processor executes whenever it receives a machine language instruction. It is the most basic CPU operation, and modern CPUs are able to perform millions of machine cycles per second. The cycle consists of three standard steps: fetch, decode and execute. In some cases, store is also incorporated into the cycle.
+   
+   The steps of a machine cycle are:
+   
+   Fetch – The control unit requests instructions from the main memory that is stored at a memory’s location as indicated by the program counter (also known as the instruction counter).
+   Decode – Received instructions are decoded in the instruction register. This involves breaking the operand field into its components based on the instruction’s operation code (opcode).
+   Execute – This involves the instruction’s opcode as it specifies the CPU operation required. The program counter indicates the instruction sequence for computer. These instructions are arranged into the instructions register and as each are executed, it increments the program counter so that the next instruction is stored in memory. Appropriate circuitry is then activated to perform the requested task. As soon as instructions have been executed, it restarts the machine cycle that begins the fetch step.  
         
-
 Development
 ------------
 ### 1. Traffic light
