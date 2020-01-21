@@ -86,6 +86,10 @@ Journal on 21/01/2020
 
    We continue working on convert system program
 
+Journal on 22/01/2020
+①　We learned about memory hiraechy
+② Socratic circle and discuss
+
 
 
 
