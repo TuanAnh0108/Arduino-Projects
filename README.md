@@ -911,6 +911,164 @@ void turnOff(){     // This function will turn both 2 lights
 
 **Gif5** This is the convert system from English to binary
 
+### CONVERT BINARY TO ENG
+```.ino
+// include the library code:
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={"BIN TO ENG","0", "1","", "DEL"};
+String text = "";
+char letter;
+int numOptions = 5;
+int led1 = 8;
+int led2 = 13;
+String text1="";
+String text2="";
+int z;
+
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+ 
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+     else if(key == "BIN TO ENG"){
+    	bintoeng();
+    } else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+void bintoeng(){
+  for (int y = 0; y < text.length(); y++){
+    if(text.charAt(y) != ' '){
+      z++;
+      text2+=text.charAt(y);
+      if(z == 8){
+        check();
+      	text2="";
+        z=0;
+      }
+    } else {
+    	text2+= " ";
+    }
+  }
+ Serial.print(text1); 
+}
+
+void check(){
+    if (text2 == "01100001") {
+           text1=text1+"a";
+    } else if (text2 == "01100010") {
+           text1=text1+"b";
+    } else if (text2 == "01100011") {
+           text1=text1+"c";
+    } else if (text2 == "01100100") {
+           text1=text1+"d";
+    } else if (text2 == "01100101") {
+           text1=text1+"e";
+    } else if (text2 == "01100110") {
+           text1=text1+"f";
+    } else if (text2 == "01100111") {
+           text1=text1+"g";
+    } else if (text2 == "01101000") {
+           text1=text1+"h";
+    } else if (text2 == "01101001") {
+           text1=text1+"i";
+    } else if (text2 == "01101010") {
+           text1=text1+"j";
+    } else if (text2 == "01101011") {
+           text1=text1+"k";
+    } else if (text2 == "01101100") {
+           text1=text1+"l";
+    } else if (text2 == "01101101") {
+           text1=text1+"m";
+    } else if (text2 == "01101110") {
+           text1=text1+"n";
+    } else if (text2 == "01101111") {
+           text1=text1+"o";
+    } else if (text2 == "01110000") {
+           text1=text1+"p";
+    } else if (text2 == "01110001") {
+           text1=text1+"q";
+    } else if (text2 == "01110010") {
+           text1=text1+"r";
+    } else if (text2 == "01110011") {
+           text1=text1+"s";
+    } else if (text2 == "01110100") {
+           text1=text1+"t";
+    } else if (text2 == "01110101") {
+           text1=text1+"u";
+    } else if (text2 == "01110110") {
+           text1=text1+"v";
+    } else if (text2 == "01110111") {
+           text1=text1+"w";
+    } else if (text2 == "01111000") {
+           text1=text1+"x";
+    } else if (text2 == "01111001") {
+           text1=text1+"y";
+    } else if (text2 == "01111010") {
+           text1=text1+"z";
+    } 
+}
+
+```
+
 Evaluation
 ---------
 
