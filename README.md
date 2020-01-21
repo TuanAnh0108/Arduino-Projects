@@ -77,7 +77,12 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 ![SystemDiagram](Sendandaddtext.jpg)
 **Fig. 6** The flow chart for send and add english text
 ![SystemDiagram](ArduinoInput.png)
+
 **Fig. 7** The arduino design of Enlish system with 2 buttons
+
+![SystemDiagram](BINTOENG.png)
+
+**Fig. 8** The flow chart of function convert binary to english
 
 ### Type of data in Arduino
     boolean (8 bit) - simple logical true/false
