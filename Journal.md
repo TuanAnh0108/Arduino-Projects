@@ -77,6 +77,14 @@ Journal on 15/01/2020
 
  We continue completeing our convert system program
 
+Journal on 20/01/2020
+
+①　We explore and learn about C program 
+②  Continue working on convert system program
+
+Journal on 21/01/2020
+
+   We continue working on convert system program
 
 
 
