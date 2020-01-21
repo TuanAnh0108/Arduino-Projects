@@ -178,7 +178,7 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
     
    Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth, the Moon, and Mars. 
     
-   ### Machine cycle
+   ### Machine cycle [5]
    
    A machine cycle consists of the steps that a computer’s processor executes whenever it receives a machine language instruction. It is the most basic CPU operation, and modern CPUs are able to perform millions of machine cycles per second. The cycle consists of three standard steps: fetch, decode and execute. In some cases, store is also incorporated into the cycle.
    
@@ -1141,6 +1141,8 @@ Reference
 [3] "Logic gate" retrived from https://whatis.techtarget.com/definition/logic-gate-AND-OR-XOR-NOT-NAND-NOR-and-XNOR
 
 [4] "Debounce button" retrived from https://www.arduino.cc/en/tutorial/debounce (1 Dec 2019)
+
+[5] "Machine cycle" retrived from https://www.techopedia.com/definition/8180/machine-cycle (21 Jan 2020)
 
 
 
