@@ -911,7 +911,7 @@ void turnOff(){     // This function will turn both 2 lights
 
 **Gif5** This is the convert system from English to binary
 
-### CONVERT BINARY TO ENG
+###  12. CONVERT BINARY TO ENG
 ```.ino
 // include the library code:
 #include <LiquidCrystal.h>
@@ -1067,6 +1067,45 @@ void check(){
     } 
 }
 
+```
+
+### 13. Function convert Morse to English
+```.ino
+  void MtoB() {
+    for(i=0; i<text.length(); i++) {                   // Run through each letter of given text
+      if((text[i+1]=='3') || ((i+1)==text.length())){  
+        mess2+=text[i];                    
+        for(j=0; j<37; j++) {                  
+          if(morse[j]==mess2) {            // Check if the letter of the morse text equal to which letter in the alphabet
+            mess3+=keyboardformorse[j];
+            break;
+          }
+        }
+        mess2="";
+        i+=1;
+        }
+      else {
+      	mess2+=text[i];        //Add the text converted to the string
+      }
+      
+    } 
+  text=mess3;
+  Serial.print(text);
+  EtoB();                // After convert from morse to english, we convert from english to binary
+  turnOnOff();
+  sentbin();
+  turnOnOff();
+  text="";
+  mess3="";
+  }
+    
+    void blinkLight(int on, int off) {
+      digitalWrite(led1, HIGH);
+      delay(on);
+      digitalWrite(led1, LOW);
+      delay(off);
+      
+    }
 ```
 
 Evaluation
