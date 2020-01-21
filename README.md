@@ -187,7 +187,34 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    Fetch – The control unit requests instructions from the main memory that is stored at a memory’s location as indicated by the program counter (also known as the instruction counter).
    Decode – Received instructions are decoded in the instruction register. This involves breaking the operand field into its components based on the instruction’s operation code (opcode).
    Execute – This involves the instruction’s opcode as it specifies the CPU operation required. The program counter indicates the instruction sequence for computer. These instructions are arranged into the instructions register and as each are executed, it increments the program counter so that the next instruction is stored in memory. Appropriate circuitry is then activated to perform the requested task. As soon as instructions have been executed, it restarts the machine cycle that begins the fetch step.  
-        
+    
+    
+ ### Memory Hirearchy
+   #### BIOS
+   Software to initiate hardware in the PC before the OS starts. ROM -> old memory system can be programmed only physically.
+   
+   #### Network/ Internet Storage
+   Storage device in the network
+   
+   #### Cache
+   Memory in the CPU to store recently used data
+      *) Level 2 : Manages data for cpu
+      *) Level 3: Used by the CPU
+   
+   #### Virtual Memory
+   Memory management of hard disk to simulate additional RAM
+   
+   #### Physical RAM
+   *) DRAM: dynamic: trnasistor - base
+   *) SRAM: static: has to be refreshed
+   
+ ### HTTPS (Hypertext Transfer Protocol Secure)
+  Secure version of HTTP by using encryption
+  
+ ### Socratic circle
+  
+   
+    
 Development
 ------------
 ### 1. Traffic light
