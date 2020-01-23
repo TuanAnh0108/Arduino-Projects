@@ -88,6 +88,15 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 
 **Fig. 8** The flow chart of function convert binary to english
 
+
+![SystemDiagram](engtobin.png)
+
+**Fig. 9** The design of convert system from english to binary
+
+![SystemDiagram](engtomorse.jpg)
+
+**Fig. 10** The design of convert system from english to morse
+
 ### Type of data in Arduino
     boolean (8 bit) - simple logical true/false
     byte (8 bit) - unsigned number from 0-255
@@ -162,6 +171,7 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
          - RISING to trigger when the pin goes from low to high,
 
          - FALLING for when the pin goes from high to low.
+         
    ### Debouncing button
    Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
    
