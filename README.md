@@ -57,10 +57,6 @@ Design
 
 **Fig. 4** The flow chart for converting decimal number to binary number
 
-![SystemDiagram](Logicgate.png)
-
-**Fig. 4** Type of logic gate
-
 **Table of creating number segment**
 
 | But A | But B | But C | Decimal | LED A | LED B | LED C | LED D | LED E | LED F | LED G |
@@ -87,7 +83,6 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 ![SystemDiagram](BINTOENG.png)
 
 **Fig. 8** The flow chart of function convert binary to english
-
 
 ![SystemDiagram](engtobin.png)
 
@@ -153,6 +148,10 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    
    A logic gate is a building block of a digital circuit. Most logic gates have two inputs and one output and are based on Boolean algebra. At any given moment, every terminal is in one of the two binary conditions false (high) or true (low). False represents 0, and true represents 1. Depending on the type of logic gate being used and the combination of inputs, the binary output will differ. A logic gate can be thought of like a light switch, wherein one position the output is off—0, and in another, it is on—1.  Logic gates are commonly used in integrated circuits (IC).[4]
    
+   ![SystemDiagram](Logicgate.png)
+
+   **Fig. 4** Type of logic gate
+   
    ### Interruption on Arduino
    When Arudino running, it will check every line of code in a very small amount of time: 10ms. So if the users want to input by using press button or other devices, the users need to be very fast or just repeat pressing the button until the Arduino check the line that contain the code for input. That is time consuming and inconvinient, it also makes the code run wrongly. We use interuption to solve this problem. Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems.
    
@@ -200,7 +199,6 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
    Decode – Received instructions are decoded in the instruction register. This involves breaking the operand field into its components based on the instruction’s operation code (opcode).
    Execute – This involves the instruction’s opcode as it specifies the CPU operation required. The program counter indicates the instruction sequence for computer. These instructions are arranged into the instructions register and as each are executed, it increments the program counter so that the next instruction is stored in memory. Appropriate circuitry is then activated to perform the requested task. As soon as instructions have been executed, it restarts the machine cycle that begins the fetch step.  
     
-    
  ### Memory Hirearchy
    #### BIOS
    Software to initiate hardware in the PC before the OS starts. ROM -> old memory system can be programmed only physically.
@@ -223,10 +221,6 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
  ### HTTPS (Hypertext Transfer Protocol Secure)
   Secure version of HTTP by using encryption
   
- ### Socratic circle
-  
-   
-    
 Development
 ------------
 ### 1. Traffic light
@@ -1374,7 +1368,7 @@ Evaluation
 The success criteria as detailed in the planning section of this document have all been met.
 
 |CRITERIA|MET|
-|:---:|:---:|
+|:---|:---:|
 |The keyboard with 2 buttons allows users to input choosing the options and letters|MET|
 |The transmitter can transmit the information correctly from english to binary, from binary to morse and vice versa.|MET|
 |User can choose and delete the letters|MET|
@@ -1397,7 +1391,7 @@ Videos given above are the evidence for the success of function converting, tran
  
  - The organization of the options can be improved by grouping options so the user can easily choose wanted options
  - The program can be visualized on touched screen, it is more convinient when no need the press buttons, and too many connected wires
- 
+ - 
 
 
 
