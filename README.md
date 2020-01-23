@@ -1113,29 +1113,225 @@ void check(){
 
 ```
 
-### 13. Function convert Morse to English
+### 13. Complete convert system
 ```.ino
+
+// include the library code:
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={" ", "SENT BINARY","SENT MORSE", "MORSE TO BINARY", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "DEL"};
+String keyboardformorse = " abcdefghijklmnopqrstuvwxyz1234567890";
+String morse[]={"0","12", "2111", "2121", "211", "1", "1121", "221", "1111", "11", "1222", "212", "1211", "22", "21", "222", "1221", "2212", "121", "111", "2", "112", "1112", "122", "2112", "2122", "2211", "12222", "11222", "11122", "11112", "11111", "21111", "22111", "22211", "22221", "22222"};
+String text = "";
+char letter;
+int numOptions = 39;
+int led1 = 8;
+int led2 = 13;
+int i,j;
+byte bna;
+String chch = "";
+String mess = "";
+String mess2 = "";
+String mess3= "";
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+ 
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+    else if(key == "SENT BINARY")
+    {
+      EtoB();
+      turnOnOff();
+      sentbin();
+      turnOnOff();
+      text="";
+    } else if(key == "SENT MORSE"){
+    	sentmorse();
+    }
+    else if(key== "MORSE TO BINARY"){
+      MtoB();
+    }
+    
+    else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+void EtoB(){
+
+for(int i=0; i<text.length(); i++){
+
+   char myChar = text.charAt(i);
+ 
+    for(int i=7; i>=0; i--){
+      bna = bitRead(myChar,i);
+      chch += bna; 
+    }
+}
+}
+
+  
+void sentbin(){
+    for(int x=0; x < chch.length(); x++){
+      char myChar1 = chch.charAt(x);
+      if(myChar1 == '0'){
+        digitalWrite(led1, LOW);
+        blink();
+        delay(500);
+      } else if(myChar1 == '1'){
+        digitalWrite(led1, HIGH);
+        blink();
+        delay(500);
+      } else {
+        turnOff();
+      }
+    }
+  }
+
+void blink(){
+  digitalWrite(led2, HIGH);
+  delay(500);
+  digitalWrite(led2, LOW);
+  delay(500);
+}
+
+void turnOnOff(){
+ digitalWrite(led1, HIGH);
+ digitalWrite(led2, HIGH);
+ delay(500);
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+void turnOff(){
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+// Morse
+void sentmorse(){
+      for(i=0; i<text.length(); i++) {
+        for(j=0; j<37; j++) {
+          if(text[i]==keyboardformorse[j]){
+            mess+=morse[j];
+            break;
+          }
+        }
+         
+        mess+="3";
+      }
+       for(i=0; i<7; i++) {
+        blinkLight(300, 300);
+      }
+      for(i=0; i<mess.length(); i++) {
+        switch (mess[i]) {
+          case '0':
+          delay(3000);
+          break;
+          
+          case '1':
+          blinkLight(1000, 1000);
+          break;
+          
+          case '2':
+          blinkLight(3000, 1000);
+          break;
+          
+          case '3':
+          delay(1000);
+          break;
+        }
+      }
+      
+      for(i=0; i<7; i++) {
+        blinkLight(300, 300);
+      }
+          
+      text="";
+    }
   void MtoB() {
-    for(i=0; i<text.length(); i++) {                   // Run through each letter of given text
-      if((text[i+1]=='3') || ((i+1)==text.length())){  
-        mess2+=text[i];                    
-        for(j=0; j<37; j++) {                  
-          if(morse[j]==mess2) {            // Check if the letter of the morse text equal to which letter in the alphabet
+    for(i=0; i<text.length(); i++) {
+      if((text[i+1]=='3') || ((i+1)==text.length())||(text[i+1]=='0')){
+        mess2+=text[i];
+        for(j=0; j<37; j++) {
+          if(morse[j]==mess2) {
             mess3+=keyboardformorse[j];
             break;
           }
         }
         mess2="";
-        i+=1;
+        if (text[i+1]=='0'){
+          mess3+=' ';
+        }
+          i+=1; 
+        
         }
       else {
-      	mess2+=text[i];        //Add the text converted to the string
+      	mess2+=text[i];
       }
       
     } 
   text=mess3;
   Serial.print(text);
-  EtoB();                // After convert from morse to english, we convert from english to binary
+  EtoB();
   turnOnOff();
   sentbin();
   turnOnOff();
@@ -1151,6 +1347,13 @@ void check(){
       
     }
 ```
+![](sentmorse.gif)
+
+**Gif6** This is the convert system from English to morse
+
+![](morsetobinary.gif)
+
+**Gif7** This is the convert system from morse to binary
 
 Evaluation
 ---------
