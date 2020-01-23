@@ -35,9 +35,11 @@ These are measurable outcomes:
    4. The bulb light is used effeciently in the communication, there is no issue for the bulblight like broken or too old.  
    5. The bulb light need to represent correctly when turn on or off as for the information
    6. An LCD screen shows the available letter options and the letter users choose.
-   7. There will be options for users to choose between transmit to binary or morse
-   8. There will be options for users to convert from binary to english, morse to english
-   9. There will be options for users to send the message to the light bulbs
+   7. Function choosing between transmit to binary or morse
+   8. Function to convert from binary to english, morse to english
+   9. Function to send the message to the light bulbs
+   10. Manual scripts for helping user
+   11. The system is simple and cheap
    
 Design
 --------
@@ -1357,6 +1359,37 @@ void sentmorse(){
 
 Evaluation
 ---------
+#### Success Criteria 
+
+The success criteria as detailed in the planning section of this document have all been met.
+
+|CRITERIA|MET|
+|:---:|:---:|
+|The keyboard with 2 buttons allows users to input choosing the options and letters|MET|
+|The transmitter can transmit the information correctly from english to binary, from binary to morse and vice versa.|MET|
+|User can choose and delete the letters|MET|
+|The bulb light is used effeciently in the communication, there is no issue for the bulblight like broken or too old|MET|
+|The bulb light need to represent correctly when turn on or off as for the information|MET|
+|An LCD screen shows the available letter options and the letter users choose|MET|
+|Function choosing between transmit english to binary or morse|MET|
+|Function convert from binary to english, morse to english|MET|
+|Options for users to send the message to the light bulbs|MET|
+|A manual scripts for helping user|MET|
+|The system is simple and cheap|MET|
+
+**Fig ** This table shows how the convert system fulfills the success criteria at the planning section
+
+Videos given above are the evidence for the success of function converting, transmitting data and also the materials used are met the criteria: lightbulbs, LCD screen. The user can choose and delete the letters and they can check how to use the program more effectively with the manual.
+
+#### Improvement
+ 
+ While this convert system works well with many useful function, it still has some limitations that need to improve in the future.
+ 
+ - The organization of the options can be improved by grouping options so the user can easily choose wanted options
+ - The program can be visualized on touched screen, it is more convinient when no need the press buttons, and too many connected wires
+ 
+
+
 
 
 
