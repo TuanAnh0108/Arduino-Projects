@@ -1391,14 +1391,9 @@ Videos given above are the evidence for the success of function converting, tran
  
  - The organization of the options can be improved by grouping options so the user can easily choose wanted options
  - The program can be visualized on touched screen, it is more convinient when no need the press buttons, and too many connected wires
- - 
-
-
-
-
-
-
-
+ - The program can record the history user user the program, and can delete or backup it when needed.
+ - The program can sort 10 most used words, so the user can choose it faster
+ 
 Reference
 ----------
 [1] "Usability" retrived from https://en.wikipedia.org/wiki/Usability (25 Nov 2019)
