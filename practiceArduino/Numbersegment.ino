@@ -1,5 +1,4 @@
 ①　 Declare all the Led and button pin
-```.ino
           int LEDA = 1;
           int LEDB = 2;
           int LEDC = 3;
@@ -10,9 +9,9 @@
           int butA = 10;
           int butB = 11;
           int butC = 12;
-```
+          
 ②　Declare the input and output
-```.ino
+
 　　　　　void setup()
        {
           pinMode(LEDA, OUTPUT);
@@ -27,9 +26,9 @@
           pinMode(butC, INPUT);
   
         }
-```
+        
 ③　Logic gate equation for each LED
-```.ino
+
        void loop()
          {
           bool A = digitalRead(butA);
@@ -51,7 +50,6 @@
           digitalWrite(LEDG, g);
                     
        }
-   ```
 ![](NumberSegment.gif)
 
 **Gif3** This is the Number Segment with 7 LEDs (it can show us number from 0 to 7)
