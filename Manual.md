@@ -57,10 +57,10 @@ x|	120|	01111000|	X|	088	|01011000
 y|	121|	01111001|	Y	|089|	01011001
 z	|122|	01111010|	Z	|090|	01011010
 
--|Light 1|Light 2| Binary NUmber
-1| ON|ON|1
-2| OFF|ON|0
-3 |OFF|OFF|Space
+|Light 1|Light 2|Binary NUmber|
+|1| ON|ON|1|
+|2| OFF|ON|0|
+|3| OFF|OFF|Space|
 
 4. HOW TO READ MORSE
 To read the morse code, the user needs to follow the protocol crrated by the developers.
