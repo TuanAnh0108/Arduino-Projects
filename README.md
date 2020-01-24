@@ -92,7 +92,7 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 
 **Fig. 10** The design of convert system from english to morse
 
-![SystemDiagram](morsetoeng.jpg)
+![SystemDiagram](morsetoeng.png)
 
 **Fig. 11** The design of convert system from morse to eng
 
