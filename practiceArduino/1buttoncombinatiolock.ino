@@ -1,5 +1,5 @@
 ① Declare the variables, led and button
-```.ino
+
 // include the library code:
 #include <LiquidCrystal.h>
 
@@ -22,9 +22,8 @@ void setup() {
   pinMode(button, INPUT);
 
 }
-```
+
 ② Create function
-```.ino
 
 void setcode1(){       // This function will track the time when the user set the password
     presscounter++;
@@ -100,9 +99,8 @@ void lock(){
    pass="";
 }
 
-```
 ③ 
-```.ino
+
 void loop() {
   unsigned long time = millis();
 
@@ -141,4 +139,3 @@ void loop() {
   
 }
 }
-```
