@@ -1100,6 +1100,7 @@ Videos given above are the evidence for the success of function converting, tran
  - The program can be visualized on touched screen, it is more convinient when no need the press buttons, and too many connected wires
  - The program can record the history user user the program, and can delete or backup it when needed.
  - The program can sort 10 most used words, so the user can choose it faster
+ - There is receiver system that can receive the signal and automatically store information into aduino so that the users don't need to take note and type it in the arduino
  
 Reference
 ----------
