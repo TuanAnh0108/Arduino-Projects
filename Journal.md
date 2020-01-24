@@ -34,16 +34,16 @@ Journal on 20/11/2019
 
 ③　At first, I did not find difficult when finding the equations and the code for the number segment, but I made a mistake when connecting the atot of the LED, and the resistor connect with the GND. After then, I came back home fixing the problems, and finally it works. 
 
-The questions I have: I have LED lights that sometimes it work, sometimes it not works, I check everything change the LED, but after all it still not works. It is not sustainable. I cannot find the reasons why?
+   The questions I have: I have LED lights that sometimes it work, sometimes it not works, I check everything change the LED, but after all it still not works. It is not sustainable. I cannot find the reasons why?
 
 Journal  on 25/11/2019
  
-I start to design the input system with two buttons.
+  I start to design the input system with two buttons.
 
-The questions I have: 
- + How to read the press button when we press it twice or hold it?
- + How we can delete the letter after choosing?
- + How to interupt the Arudino
+  The questions I have: 
+   + How to read the press button when we press it twice or hold it?
+   + How we can delete the letter after choosing?
+   + How to interupt the Arudino
  
  Journal on 27/11/2019
  
@@ -75,7 +75,7 @@ Journal on 13/1/2020
  
 Journal on 15/01/2020
 
- We continue completeing our convert system program
+  We continue completeing our convert system program
 
 Journal on 20/01/2020
 
@@ -89,6 +89,7 @@ Journal on 21/01/2020
 Journal on 22/01/2020
 
 ①　We learned about memory hiraechy
+
 ② Socratic circle and discuss
 
 
