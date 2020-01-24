@@ -92,6 +92,10 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 
 **Fig. 10** The design of convert system from english to morse
 
+![SystemDiagram](morsetoeng.jpg)
+
+**Fig. 11** The design of convert system from morse to eng
+
 ### Type of data in Arduino
     boolean (8 bit) - simple logical true/false
     byte (8 bit) - unsigned number from 0-255
