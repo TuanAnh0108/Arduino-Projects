@@ -73,9 +73,13 @@ Design
 Based on this truth table, the problem can be easily solved with logic gates. We can create equation for each light then it will show us the number we want.
 
 ![SystemDiagram](EnglishInputSystem.png)
+
 **Fig. 5** The design of English Input system with 2 buttons
+
 ![SystemDiagram](Sendandaddtext.jpg)
+
 **Fig. 6** The flow chart for send and add english text
+
 ![SystemDiagram](ArduinoInput.png)
 
 **Fig. 7** The arduino design of Enlish system with 2 buttons
@@ -95,135 +99,6 @@ Based on this truth table, the problem can be easily solved with logic gates. We
 ![SystemDiagram](morsetoeng.png)
 
 **Fig. 11** The design of convert system from morse to eng
-
-### Type of data in Arduino
-    boolean (8 bit) - simple logical true/false
-    byte (8 bit) - unsigned number from 0-255
-    char (8 bit) - signed number from -128 to 127. 
-    unsigned char (8 bit) - same as 'byte'; 
-    word (16 bit) - unsigned number from 0-65535
-    unsigned int (16 bit)
-    int (16 bit) - signed number from -32768 to 32767. 
-    unsigned long (32 bit) - unsigned number from 0-4,294,967,295. 
-    long (32 bit) - signed number from -2,147,483,648 to 2,147,483,647
-    float (32 bit) - signed number from -3.4028235E38 to 3.4028235E38
-
-### Usability 
-
-Usability is according to Wikipedia[1] the degree of wase with which a product can be used to achieve their goals. It studies the elegance, clarity, intuitive with which the computer program. 
-
-### Human-centered design HCD
-
-Human-centerd design HCD according to Wikipedia[2] is an approach to problem solving, commonly used in design and management frameworks that develops solutions to problems by involving the human perspective in all steps of the problem-solving process. Human involvement typically takes place in observing the problem within context, brainstorming, conceptualizing, developing, and implementing the solution.
-
-### Compare Bash and Arduino programing languge
-① Advantages of bash and arduino
-
-   | Bash | Arduino |
-   | :--- | :--- |
-   |Easy to learn and use| Compatible with many different platform |
-   |Powerful, doing tasks in computer like: deleting, adding, creating files,... with just typing| Various type of data |
-   |Can see the output immediately after finishing coding in the same app where writing code| Well suited with the large and complex task|
-   |The command and syntax are exactly the same as those directly entered in command line, so programmer do not need to switch to entirely different syntax| Fast, effecient language|
-   |Much quicker when writing code with bash| It is very easy to understand, it uses keywords like: if, switch, void,.. |
-   |Customizing administrative tasks| You can easily find the error |
-   |Quick start, and interactive debugging| |
-   |No need to declare the type of data| |
-   |No need to use ; to end a statement| |
-   |No need to close a comment||
-
-② Disadvantages of bash and arduino
-
-   | Bash | Arduino |
-   | :--- | :--- |
-   |Prone to costly errors, a single mistake can change the command which might be harmful| Cannot do administrator tasks|
-   |Slow execution speed| Need to declare the type of data|
-   |Not well suited with the large and complex task| Need to close a comment|
-   |Provide minimal data structure unlike other scripting languages| Need to ; to end a statement|
-   |Limited data types| |
-   |Compatibility problems between different platforms| |
-
-③ Comparison of bash and arduino
-   
-   | Bash | Arduino |
-   | :--- | :--- |
-   | In bash, the for loop use curly braces for the statement that need to repeat. There are 3 parameters in the curly braces: initialization, condition and increment. You do not need to declare the data type of variable that you will use in your code. Moreover, you have to use do when opening a statement, done when closing the statement for the for loop. Next, at the end of the statement we do not need to use ";" to end the statement. When using a variable, you need to use "$" before the name of the variable. Then, to make a comment, you just use "#" to open a comment line. We use "echo" to print String or variable. Then, bash is a powerful programming language, it can do the administrator task| In Arduino,like bash we use curly braces for the statement that need to repeat. Also it has the same 3 parameters as in bash. You have to declare all the variable that you use in your program or it will cause errors. Next, the for loop just need to have open and close brackets for the statement. ";" is the compulsory thing in Arduino code, we have to use it to end the statement or it will cause errors. In the contrast of bash, arduino code does not require "$" when using variable. When making a comment, you need to open and close (using /* )the comment. We use "print" to print the string or variables. Arduino programming language cannot execute the administrator task like adding, deleting,.. files, folders.  |
-   ### Logic gate
-   
-   A logic gate is a building block of a digital circuit. Most logic gates have two inputs and one output and are based on Boolean algebra. At any given moment, every terminal is in one of the two binary conditions false (high) or true (low). False represents 0, and true represents 1. Depending on the type of logic gate being used and the combination of inputs, the binary output will differ. A logic gate can be thought of like a light switch, wherein one position the output is off—0, and in another, it is on—1.  Logic gates are commonly used in integrated circuits (IC).[4]
-   
-   ![SystemDiagram](Logicgate.png)
-
-   **Fig. 4** Type of logic gate
-   
-   ### Interruption on Arduino
-   When Arudino running, it will check every line of code in a very small amount of time: 10ms. So if the users want to input by using press button or other devices, the users need to be very fast or just repeat pressing the button until the Arduino check the line that contain the code for input. That is time consuming and inconvinient, it also makes the code run wrongly. We use interuption to solve this problem. Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems.
-   
-   Syntax:  attachInterrupt(pin, ISR, mode)
-      
-   pin: the Arduino pin number.
-      
-   ISR: the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function       is sometimes referred to as an interrupt service routine.
-      
-   mode: defines when the interrupt should be triggered. Four constants are predefined as valid values:
-
-         - LOW to trigger the interrupt whenever the pin is low,
-
-         - CHANGE to trigger the interrupt whenever the pin changes value
-
-         - RISING to trigger when the pin goes from low to high,
-
-         - FALLING for when the pin goes from high to low.
-         
-   ### Debouncing button
-   Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
-   
-   ### Protocol
-   
-   | NAME | CREATOR | SUMMARY |
-   | :---: | :---: | :---: |
-   |IP|Vint Cerf & Bob Kahn| Interface identification addresss in the network|
-   |FTP|Abhay Bhusan| Transfer file between client and server|
-   |SSH|Tatu Ylonen|Log into a remote machine and execute commands|
-   |SMTP|RFC821|Send/receive emails|
-   |Telnet|UCLA| Uesd on the internet or local area network|
-   |POP3|Mark Crispin| Send/receive emails and download emails|
-   |HTTP|Tim Berners-Lee| Used on worldwide web for anything clickable (hyperlinks,etc)|
-   |VPN|Gurdeep Singh-Pall| Provides encrypted internet connections|
-    
-   Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth, the Moon, and Mars. 
-    
-   ### Machine cycle [5]
-   
-   A machine cycle consists of the steps that a computer’s processor executes whenever it receives a machine language instruction. It is the most basic CPU operation, and modern CPUs are able to perform millions of machine cycles per second. The cycle consists of three standard steps: fetch, decode and execute. In some cases, store is also incorporated into the cycle.
-   
-   The steps of a machine cycle are:
-   
-   Fetch – The control unit requests instructions from the main memory that is stored at a memory’s location as indicated by the program counter (also known as the instruction counter).
-   Decode – Received instructions are decoded in the instruction register. This involves breaking the operand field into its components based on the instruction’s operation code (opcode).
-   Execute – This involves the instruction’s opcode as it specifies the CPU operation required. The program counter indicates the instruction sequence for computer. These instructions are arranged into the instructions register and as each are executed, it increments the program counter so that the next instruction is stored in memory. Appropriate circuitry is then activated to perform the requested task. As soon as instructions have been executed, it restarts the machine cycle that begins the fetch step.  
-    
- ### Memory Hirearchy
-   #### BIOS
-   Software to initiate hardware in the PC before the OS starts. ROM -> old memory system can be programmed only physically.
-   
-   #### Network/ Internet Storage
-   Storage device in the network
-   
-   #### Cache
-   Memory in the CPU to store recently used data
-      *) Level 2 : Manages data for cpu
-      *) Level 3: Used by the CPU
-   
-   #### Virtual Memory
-   Memory management of hard disk to simulate additional RAM
-   
-   #### Physical RAM
-   *) DRAM: dynamic: trnasistor - base
-   *) SRAM: static: has to be refreshed
-   
- ### HTTPS (Hypertext Transfer Protocol Secure)
-  Secure version of HTTP by using encryption
   
 Development
 ------------
@@ -247,8 +122,46 @@ Development
           delay(t);
           }
  ```
+### 2. Usability 
 
-### 2. Debouncing button
+Usability is according to Wikipedia[1] the degree of wase with which a product can be used to achieve their goals. It studies the elegance, clarity, intuitive with which the computer program.
+
+### 3. Logic gate
+   
+   A logic gate is a building block of a digital circuit. Most logic gates have two inputs and one output and are based on Boolean algebra. At any given moment, every terminal is in one of the two binary conditions false (high) or true (low). False represents 0, and true represents 1. Depending on the type of logic gate being used and the combination of inputs, the binary output will differ. A logic gate can be thought of like a light switch, wherein one position the output is off—0, and in another, it is on—1.  Logic gates are commonly used in integrated circuits (IC).[4]
+   
+   ![SystemDiagram](Logicgate.png)
+
+   **Fig. 12** Type of logic gate
+   
+### 4. Protocol
+   
+   | NAME | CREATOR | SUMMARY |
+   | :---: | :---: | :---: |
+   |IP|Vint Cerf & Bob Kahn| Interface identification addresss in the network|
+   |FTP|Abhay Bhusan| Transfer file between client and server|
+   |SSH|Tatu Ylonen|Log into a remote machine and execute commands|
+   |SMTP|RFC821|Send/receive emails|
+   |Telnet|UCLA| Uesd on the internet or local area network|
+   |POP3|Mark Crispin| Send/receive emails and download emails|
+   |HTTP|Tim Berners-Lee| Used on worldwide web for anything clickable (hyperlinks,etc)|
+   |VPN|Gurdeep Singh-Pall| Provides encrypted internet connections|
+    
+   Based off this information and knowledge about protocols, we now worked together to find a common protocol for our communication between Earth, the Moon, and Mars. 
+
+ ### 5. Machine cycle [5]
+   
+   A machine cycle consists of the steps that a computer’s processor executes whenever it receives a machine language instruction. It is the most basic CPU operation, and modern CPUs are able to perform millions of machine cycles per second. The cycle consists of three standard steps: fetch, decode and execute. In some cases, store is also incorporated into the cycle.
+   
+   The steps of a machine cycle are:
+   
+   Fetch – The control unit requests instructions from the main memory that is stored at a memory’s location as indicated by the program counter (also known as the instruction counter).
+   Decode – Received instructions are decoded in the instruction register. This involves breaking the operand field into its components based on the instruction’s operation code (opcode).
+   Execute – This involves the instruction’s opcode as it specifies the CPU operation required. The program counter indicates the instruction sequence for computer. These instructions are arranged into the instructions register and as each are executed, it increments the program counter so that the next instruction is stored in memory. Appropriate circuitry is then activated to perform the requested task. As soon as instructions have been executed, it restarts the machine cycle that begins the fetch step.  
+   
+### 6. Debouncing button
+
+   Pushbuttons often generate spurious open/close transitions when pressed, due to mechanical and physical issues: these transitions may be read as multiple presses in a very short time fooling the program. Debounce means checking the input twice in a short period of time to make sure the pushbutton is definitely pressed. Without debouncing, pressing the button once may cause unpredictable results.[3]
 
 ①　Declare the button and the led pin number and state
 ```.ino
@@ -312,7 +225,26 @@ void loop() {
   lastButtonState = reading;
 }
 ```
-### 3. Debounce button
+### 7. Interruption
+
+   When Arudino running, it will check every line of code in a very small amount of time: 10ms. So if the users want to input by using press button or other devices, the users need to be very fast or just repeat pressing the button until the Arduino check the line that contain the code for input. That is time consuming and inconvinient, it also makes the code run wrongly. We use interuption to solve this problem. Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems.
+   
+   Syntax:  attachInterrupt(pin, ISR, mode)
+      
+   pin: the Arduino pin number.
+      
+   ISR: the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function       is sometimes referred to as an interrupt service routine.
+      
+   mode: defines when the interrupt should be triggered. Four constants are predefined as valid values:
+
+         - LOW to trigger the interrupt whenever the pin is low,
+
+         - CHANGE to trigger the interrupt whenever the pin changes value
+
+         - RISING to trigger when the pin goes from low to high,
+
+         - FALLING for when the pin goes from high to low.
+         
 ```.ino
 // Declare
 const byte ledPin = 13;
@@ -336,7 +268,7 @@ void blink() {
 
 ```
 
-### 4. English Input System
+### 8. English Input System
 
 ①  Add all the letters and digits to the keyboard
 ```.ino
@@ -412,7 +344,7 @@ void loop() {
   delay(100);
 }
 ```
-### 5. Small development on moving the LCD screen to left and right
+### 9. Small development on moving the LCD screen to left and right
  ①　Declare the libraries, number of LCD interface pins, the button pin numbers.
  ```.ino
  // include the library code:
@@ -497,7 +429,7 @@ void loop() {
 
 **Gif4** This is the LCD scroll
 
-### 6. Convert English to binary ASCII
+### 10. Convert English to binary ASCII
 ```.ino
 
 void setup()
@@ -520,7 +452,7 @@ for(int i=0; i<myText.length(); i++){  // this loop will run through every chara
 }
 ```
 
-### 7. Complete convert E to Binary system and signal.
+### 11. Complete convert E to Binary system and signal.
 ```.ino
  // include the library code:
 #include <LiquidCrystal.h>
@@ -665,7 +597,7 @@ void turnOff(){     // This function will turn both 2 lights
 
 **Gif5** This is the convert system from English to binary
 
-###  8. CONVERT BINARY TO ENG
+###  12. CONVERT BINARY TO ENG
 ```.ino
 // include the library code:
 #include <LiquidCrystal.h>
@@ -826,7 +758,7 @@ void check(){
 
 **Gif6** This is the convert system from binary to eng
 
-### 9. Complete convert system
+### 13. Complete convert system
 ```.ino
 
 // include the library code:
@@ -1088,7 +1020,7 @@ The success criteria as detailed in the planning section of this document have a
 |A manual scripts for helping user|MET|
 |The system is simple and cheap|MET|
 
-**Fig ** This table shows how the convert system fulfills the success criteria at the planning section
+**Fig 13** This table shows how the convert system fulfills the success criteria at the planning section
 
 Videos given above are the evidence for the success of function converting, transmitting data and also the materials used are met the criteria: lightbulbs, LCD screen. The user can choose and delete the letters and they can check how to use the program more effectively with the manual.
 
