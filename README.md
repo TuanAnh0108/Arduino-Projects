@@ -1122,6 +1122,9 @@ void check(){
 }
 
 ```
+![](sentmorse.gif)
+
+**Gif6** This is the convert system from binary to eng
 
 ### 13. Complete convert system
 ```.ino
@@ -1359,11 +1362,12 @@ void sentmorse(){
 ```
 ![](sentmorse.gif)
 
-**Gif6** This is the convert system from English to morse
+**Gif7** This is the convert system from English to morse
 
 ![](morsetobinary.gif)
 
-**Gif7** This is the convert system from morse to binary
+**Gif8** This is the convert system from morse to binary
+
 
 Evaluation
 ---------
