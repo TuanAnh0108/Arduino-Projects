@@ -227,58 +227,7 @@ Human-centerd design HCD according to Wikipedia[2] is an approach to problem sol
   
 Development
 ------------
-### 1. Traffic light
-
-①　Declare the port number of each LED light and set the LED light as OUPUT
-   ```.ino       
-      int red = 10;
-      int yellow = 9;
-      int green = 8;
-      
-      void setup(){
-      pinMode(red, OUTPUT);
-      pinMode(yellow, OUTPUT);
-      pinMode(green, OUTPUT);
-      }
-  ``` 
-![](TrafficLight.gif)
-
-**Gif1** This is the result after making the arduino for the traffic light
-
-② Declare function changeLight(){}
-
-      void changeLights(){}
-      
-③　Write code for the traffic light inside the changeLight function
-```.ino
-    # Turn the green ligh off, the yellow light turns on 
-       digitalWrite(green, LOW);
-       digitalWrite(yellow, HIGH);
-       delay(3000);
-       
-    # Turn off the yellow light, then turn on the red light
-      digitalWrite(yellow, LOW);
-      digitalWrite(red, HIGH);
-      delay(5000);
-
-    # Turn on the red and yellow light
-      digitalWrite(yellow, HIGH);
-      delay(2000);
-    
-    #  Turn off the red and yellow light, turn on the green light     
-      digitalWrite(yellow, LOW);
-      digitalWrite(red, LOW);
-      digitalWrite(green, HIGH);
-      delay(3000);
- ```
- ④　Execute the function changeLight inside the void loop() {}
- ```.ino
-      void loop(){
-      changeLights();
-      delay(15000);
-     }  
- ```  
-### 2. The blink LED
+### 1.Blinking LED
 ```.ino
           int redLED = 13;
           
@@ -298,109 +247,8 @@ Development
           delay(t);
           }
  ```
-### 3. The counter from 1 to 15 binary number
- ```.ino
-          void setup()
-          {
-           pinMode(A, OUTPUT);
-           pinMode(B, OUTPUT);
-          pinMode(C, OUTPUT);
-          pinMode(D, OUTPUT);
-          }
 
-          void loop()
-          {
-          for (i = 0; i <= 15; i += 1)
-          {
-          if (i%2 == 1)
-          {
-          digitalWrite (D, HIGH);
-          } 
-          if (i%4 > 1)
-          {
-          digitalWrite (C, HIGH);
-          }
-          if (i%8 > 3) 
-          {
-          digitalWrite (B, HIGH);
-          }
-          if (i%16 > 7)
-          {
-          digitalWrite (A, HIGH);
-          }
-          delay (300);
-          digitalWrite (D, LOW);
-          digitalWrite (C, LOW);
-          digitalWrite (B, LOW);
-          digitalWrite (A, LOW);
-    
-          }
-          }  
- ```
- ![](CounterBinary.gif)
- 
- **Gif2** This is the counter Binary number from 1 to 15 
-
-### 4. The number segements
-①　 Declare all the Led and button pin
-```.ino
-          int LEDA = 1;
-          int LEDB = 2;
-          int LEDC = 3;
-          int LEDD = 4;
-          int LEDE = 5;
-          int LEDF = 6;       
-          int LEDG = 7;
-          int butA = 10;
-          int butB = 11;
-          int butC = 12;
-```
-②　Declare the input and output
-```.ino
-　　　　　void setup()
-       {
-          pinMode(LEDA, OUTPUT);
-          pinMode(LEDB, OUTPUT);
-          pinMode(LEDC, OUTPUT);
-          pinMode(LEDD, OUTPUT);
-          pinMode(LEDE, OUTPUT);
-          pinMode(LEDF, OUTPUT);
-          pinMode(LEDG, OUTPUT);
-          pinMode(butA, INPUT);
-          pinMode(butB, INPUT);
-          pinMode(butC, INPUT);
-  
-        }
-```
-③　Logic gate equation for each LED
-```.ino
-       void loop()
-         {
-          bool A = digitalRead(butA);
-          bool B = digitalRead(butB);
-          bool C = digitalRead(butC);
-          bool a = (!C & !A) | (B & !A) | (!C & A) | (A & !B);
-          bool b = (!C & A) | (!B & !A) | (A & !B);
-          bool c = (!A & !C) | (!A & !B) | (!C & B);
-          bool d = (!A & !C) | (!A & B) | (B & !C) | (C & A & !B);
-          bool e = A | (!C & !B) | (C & B);
-          bool f = (!A & B) | (!C & !A) | (!C & !B);
-          bool g = (!A & B) | (B & !C) | (A & !B);
-          digitalWrite(LEDA, a);
-          digitalWrite(LEDB, b);
-          digitalWrite(LEDC, c);
-          digitalWrite(LEDD, d);
-          digitalWrite(LEDE, e);
-          digitalWrite(LEDF, f);
-          digitalWrite(LEDG, g);
-                    
-       }
-   ```
-![](NumberSegment.gif)
-
-**Gif3** This is the Number Segment with 7 LEDs (it can show us number from 0 to 7)
-
-### 5. Debouncing button
+### 2. Debouncing button
 
 ①　Declare the button and the led pin number and state
 ```.ino
@@ -464,7 +312,7 @@ void loop() {
   lastButtonState = reading;
 }
 ```
-### 6. Debounce button
+### 3. Debounce button
 ```.ino
 // Declare
 const byte ledPin = 13;
@@ -488,7 +336,7 @@ void blink() {
 
 ```
 
-### 7. English Input System
+### 4. English Input System
 
 ①  Add all the letters and digits to the keyboard
 ```.ino
@@ -564,7 +412,7 @@ void loop() {
   delay(100);
 }
 ```
-### 8. Small development on moving the LCD screen to left and right
+### 5. Small development on moving the LCD screen to left and right
  ①　Declare the libraries, number of LCD interface pins, the button pin numbers.
  ```.ino
  // include the library code:
@@ -649,155 +497,7 @@ void loop() {
 
 **Gif4** This is the LCD scroll
 
-### 9. One button combination
-① Declare the variables, led and button
-```.ino
-// include the library code:
-#include <LiquidCrystal.h>
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 3, 6);
-
-int presscounter = 0;   
-int presscounter1 = 0;
-String setcode = "";
-String pass = "";
-const int led = 8;
-const int button = 2;
-unsigned long interrupt_time = millis();
-unsigned long interrupt_time1 = millis();
-
-void setup() {
-  Serial.begin(9600);
-  lcd.begin(16, 2);
-  pinMode(led, OUTPUT);
-  pinMode(button, INPUT);
-
-}
-```
-② Create function
-```.ino
-
-void setcode1(){       // This function will track the time when the user set the password
-    presscounter++;
-    interrupt_time = millis();
-  }   
-void setcode2(){        // This function will track the time when the user enter the password
-    presscounter1++;
-    interrupt_time1 = millis();
-}
-
-
-void blink(){      // This function will blink the LED
-     digitalWrite(led, HIGH);
-     delay(600);
-     digitalWrite(led, LOW);
-     delay(500);
-}
-
-void check1(){      // This function will check if the lenth of the password that the user setting is equal to 3
-  if(setcode.length() == 3){
-    digitalWrite(led, HIGH);
-    delay(2000);
-    digitalWrite(led, LOW);
-    delay(1000);
-    lcd.clear();
-    lcd.setCursor(0,0);
-    lcd.print("The password is set!");
-    for(int a = 0; a < 19; a++){     // This helps display the whole text 
-     lcd.scrollDisplayLeft();
-      delay(250);
-    }
-    lcd.clear();
-  }
-}
-
-void check2(){       //This function will check if the passcode enter is correct
-  if(pass.length() == 3 && pass == setcode){       //If the user has done with enterering password and the password is correct
-    lcd.clear();
-    lcd.setCursor(0,0);
-    lcd.print("The password is correct!");
-    for(int a = 0; a < 25; a++){
-     lcd.scrollDisplayLeft();
-      delay(250);
-    }
-    for(int b = 0; b < 25; b++){
-     lcd.scrollDisplayRight();
-    }
-    lcd.setCursor(0,1);
-    lcd.clear();
-    lcd.print("Unlock!");
-    delay(2000);
-    lcd.clear();
-    digitalWrite(led, HIGH);
-    delay(3000);
-    digitalWrite(led, LOW);
-    delay(1000);
-    lcd.clear();
-    lcd.setCursor(0,1);
-    lcd.print("Lock!");
-    lock();
-  } else if (pass.length() == 3 && pass != setcode){  //If the password is wrong
-    for (int z = 0; z < 3; z++){
-      blink();
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("Wrong!!!");
-      pass="";
-    }
-  }
-}
-
-void lock(){
-   pass="";
-}
-
-```
-③ 
-```.ino
-void loop() {
-  unsigned long time = millis();
-
-  if (setcode.length() < 3) {
-   lcd.setCursor(0, 0);
-  lcd.print("Set password:");
-  attachInterrupt(0, setcode1, RISING);
-  if(time - interrupt_time >= 3000 && presscounter != 0){
- 
-    for(int x = 0; x < presscounter; x++){
-      blink();
-    } 
-    setcode+=presscounter;
-    lcd.setCursor(0, 1);
-    lcd.print(setcode);
-    presscounter=0;
-    check1();
- 
-  } 
-  } else if(setcode.length() == 3) {
-    lcd.setCursor(0, 0);
-    lcd.print("Enter password:");
-    attachInterrupt(0, setcode2, RISING);
-  if(time - interrupt_time1 >= 3000 && presscounter1 != 0){
-    for(int y = 0; y < presscounter1; y++){
-      blink();
-    } 
-    pass+=presscounter1;
-    lcd.setCursor(0,1);
-    lcd.print(pass);
-    Serial.print(pass);
-    presscounter1=0;
-    check2();
-    delay(4000);
-  }
-  
-}
-}
-```
-
-
-
-### 10. Convert English to binary ASCII
+### 6. Convert English to binary ASCII
 ```.ino
 
 void setup()
@@ -820,7 +520,7 @@ for(int i=0; i<myText.length(); i++){  // this loop will run through every chara
 }
 ```
 
-### 11. Complete convert E to Binary system and signal.
+### 7. Complete convert E to Binary system and signal.
 ```.ino
  // include the library code:
 #include <LiquidCrystal.h>
@@ -965,7 +665,7 @@ void turnOff(){     // This function will turn both 2 lights
 
 **Gif5** This is the convert system from English to binary
 
-###  12. CONVERT BINARY TO ENG
+###  8. CONVERT BINARY TO ENG
 ```.ino
 // include the library code:
 #include <LiquidCrystal.h>
@@ -1126,7 +826,7 @@ void check(){
 
 **Gif6** This is the convert system from binary to eng
 
-### 13. Complete convert system
+### 9. Complete convert system
 ```.ino
 
 // include the library code:
@@ -1367,7 +1067,6 @@ void sentmorse(){
 ![](morsetobinary.gif)
 
 **Gif8** This is the convert system from morse to binary
-
 
 Evaluation
 ---------
